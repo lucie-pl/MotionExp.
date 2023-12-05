@@ -1,1 +1,10 @@
-<h1>Movies (from API)</h1>
+<h1>Movies - search bar</h1>
+
+<%# Using the seed file for the moment, we need to call the API %>
+
+<ul>
+  <% @save_items.each do |save_item| %>
+      <li><%= save_item.title %>, <%= save_item.year %></li>
+      <%=link_to 'See details', movie_path(save_item), class:"btn btn-primary mt-2"%>
+  <% end %>
+</ul>
