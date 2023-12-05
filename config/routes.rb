@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+  resources :movies, only: [:show, :index], param: :api_id do
+    # post "/movies/:movie_api_id/save_items", to: "save_items#create", as: :movies_movie_api_id_save_items
+    resources :save_items, only: [:create]
+  end
+
+  resources :save_items, only: [:update] do
+    resources :reviews, only: [:create]
+  end
+  get "/my_movies", to: "save_items#index"
+
+  resources :notifications, only: [:index, :show]
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
