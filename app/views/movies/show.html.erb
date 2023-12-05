@@ -1,1 +1,10 @@
 <h1>Movie showpage</h1>
+
+<%= @save_item.title %>
+<br>
+<%= image_tag @save_item.poster%>
+
+<br>
+<br>
+
+<%=link_to 'Back to search page', movies_path, class:"btn btn-primary mt-2"%>
