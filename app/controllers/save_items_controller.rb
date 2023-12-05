@@ -1,0 +1,2 @@
+class SaveItemsController < ApplicationController
+end
