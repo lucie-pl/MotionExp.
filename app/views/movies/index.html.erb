@@ -1,11 +1,14 @@
-<h1>Movies - search bar</h1>
+<div class="container">
+  <%= render "shared/search" %>
 
-<%# Using the seed file for the moment, we need to call the API %>
+  <%# Using the seed file for the moment, we need to call the API %>
 
-<ul>
-  <% @movies.each do |movie| %>
-      <li><%= movie.title %>, <%= movie.year %></li>
+  <ul>
+    <% @movies.each do |movie| %>
+        <li><%= movie.title %>, <%= movie.year %></li>
 
-      <%=link_to 'See details', movie_path(movie), class:"btn btn-primary mt-2"%>
-  <% end %>
-</ul>
+        <%=link_to 'See details', movie_path(movie), class:"btn btn-primary mt-2"%>
+    <% end %>
+  </ul>
+
+</div>
