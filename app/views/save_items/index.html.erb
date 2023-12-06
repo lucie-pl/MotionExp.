@@ -3,10 +3,18 @@
 <ul class="nav nav-underline">
   <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="#">Watchlist</a>
-    <p>mivies</p>
+    <% @save_items.each do |save_item| %>
+      <% if save_item.history == false %>
+        <p><%= image_tag "#{save_item.poster} "%></p>
+      <% end  %>
+    <% end %>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">History list</a>
-    <p>movies</p>
+    <% @save_items.each do |save_item| %>
+      <% if save_item.history == true %>
+        <p><%= image_tag "#{save_item.poster} "%></p>
+      <% end %>
+    <% end %>
   </li>
 </ul>

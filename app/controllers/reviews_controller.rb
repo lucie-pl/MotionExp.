@@ -5,11 +5,14 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    raise
     @save_item = Save_item.find(:save_item_id)
     @review = Review.new(review_params)
-    @review.save
-    redirect_to
+    @review.save_item = @save_item
+    if @review.save
+      redirect_to my_movies_path
+    else
+      render "", status: :unprocessable_entity
+    end
   end
 
   private
