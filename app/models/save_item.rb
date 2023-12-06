@@ -1,7 +1,6 @@
 class SaveItem < ApplicationRecord
   belongs_to :user
   has_many :notifications
-  has_many :reviews
 
   validates :api_movie_id, presence: true
   # , uniqueness: true
