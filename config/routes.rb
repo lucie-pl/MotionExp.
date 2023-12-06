@@ -6,9 +6,8 @@ Rails.application.routes.draw do
     resources :save_items, only: [:create]
   end
 
-  resources :save_items, only: [:update] do
-    resources :reviews, only: [:create]
-  end
+  resources :save_items, only: [:update]
+
   get "/my_movies", to: "save_items#index"
 
   resources :notifications, only: [:index, :show]
