@@ -3,5 +3,6 @@
 <ul>
 <% @notifications.each do |notification| %>
   <li><%= notification.notif_title %></li>
+  <p><%= link_to "see details", notification_path(notification) %></p>
 <% end %>
 </ul>
