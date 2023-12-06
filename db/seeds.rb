@@ -36,8 +36,8 @@ MovieActor.create(movie: Movie.first, actor: Actor.last)
 MovieActor.create(movie: Movie.last, actor: Actor.first)
 
 SaveItem.create(user: User.first, title: "Inception", year: 2010, api_movie_id: 1000, poster: "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg")
-SaveItem.create(user: User.first, title: "Interstellar", year: 2014, api_movie_id: 1001, poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg")
-SaveItem.create(user: User.first, title: Movie.first.title, year: Movie.first.year, api_movie_id: Movie.first.id, poster: Movie.first.poster)
+SaveItem.create(user: User.first, history: true, title: "Interstellar", year: 2014, api_movie_id: 1001, poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg")
+SaveItem.create(user: User.first, history: true, title: Movie.first.title, year: Movie.first.year, api_movie_id: Movie.first.id, poster: Movie.first.poster)
 
 Notification.create(notif_title: "Programmed in Beaubien Cinema", content: "Inception is available", save_item: SaveItem.first, user: User.first)
 Notification.create(notif_title: "Programmed in Parc Cinema", content: "The Departed is available", save_item: SaveItem.last, user: User.first)
