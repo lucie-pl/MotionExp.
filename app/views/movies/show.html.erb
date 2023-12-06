@@ -18,4 +18,6 @@
   <%= image_tag @movie.poster%>
   <br>
   <br>
+  <%= render "shared/new", movie: @movie, save_item: @save_item, history: false %>
+  <%= render "shared/new", movie: @movie, save_item: @save_item, history: true %>
 </div>
