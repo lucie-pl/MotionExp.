@@ -1,10 +1,21 @@
-<h1>Movie showpage</h1>
+<div class= "container">
+  <h1>Movie showpage</h1>
+  <br>
+  <%=link_to 'Back to search page', movies_path, class:"btn btn-primary mt-2"%>
+  <br>
+  <br>
+  <h1><%= @movie.title %></h1>
+  <ul>
+    <% @movie.actors.each do |actor| %>
+        <p><%= actor.first_name%> <%= actor.last_name%></p>
+    <% end %>
+    <% @movie.directors.each do |director| %>
+        <p><%= director.first_name%> <%= director.last_name%></p>
+    <% end %>
+  </ul>
 
-<%= @save_item.title %>
-<br>
-<%= image_tag @save_item.poster%>
-
-<br>
-<br>
-
-<%=link_to 'Back to search page', movies_path, class:"btn btn-primary mt-2"%>
+  <br>
+  <%= image_tag @movie.poster%>
+  <br>
+  <br>
+</div>
