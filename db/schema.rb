@@ -67,15 +67,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_211820) do
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.integer "rating"
-    t.text "comment"
-    t.bigint "save_item_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["save_item_id"], name: "index_reviews_on_save_item_id"
-  end
-
   create_table "save_items", force: :cascade do |t|
     t.integer "api_movie_id"
     t.boolean "history", default: false
@@ -86,7 +77,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_211820) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "rating"
+    t.integer "rating", default: 0, null: false
     t.text "comment"
     t.index ["user_id"], name: "index_save_items_on_user_id"
   end
@@ -112,6 +103,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_211820) do
   add_foreign_key "movie_directors", "movies"
   add_foreign_key "notifications", "save_items"
   add_foreign_key "notifications", "users"
-  add_foreign_key "reviews", "save_items"
   add_foreign_key "save_items", "users"
 end
