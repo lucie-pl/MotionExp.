@@ -1,3 +1,6 @@
+<br>
+<br>
+<%# this form is for create a new review %>
 <%= simple_form_for(@review) do |f| %>
   <%= f.input :rating, collection: [1, 2, 3, 4, 5] %>
   <%= f.input :comment, placeholder: 'add your comments here' %>
