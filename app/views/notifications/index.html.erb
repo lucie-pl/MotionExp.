@@ -4,5 +4,6 @@
 <% @notifications.each do |notification| %>
   <li><%= notification.notif_title %></li>
   <p><%= link_to "see details", notification_path(notification) %></p>
+  <p><%= link_to notification.notif_title, movie_path %></p>
 <% end %>
 </ul>
