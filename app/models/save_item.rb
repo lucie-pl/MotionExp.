@@ -10,5 +10,5 @@ class SaveItem < ApplicationRecord
 
   # validates :history, presence: true
   # validates :marked, presence: true
-  validates :rating, inclusion: { in: [1, 2, 3, 4, 5] }
+  validates :rating, inclusion: { in: [0, 1, 2, 3, 4, 5] }
 end
