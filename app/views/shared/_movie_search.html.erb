@@ -1,0 +1,22 @@
+<div class="div mb-4">
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: my_movies_path, method: :get, class: "d-flex" do %>
+      <% if history_items %>
+        <%= text_field_tag :history_query,
+              params[:history_query],
+              class: "form-control",
+              placeholder: "Find movies, directors, actors, ..."
+          %>
+          <% else %>
+           <%= text_field_tag :watchlist_query,
+              params[:watchlist_query],
+              class: "form-control",
+              placeholder: "Find movies, directors, actors, ..."
+          %>
+          <% end %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
