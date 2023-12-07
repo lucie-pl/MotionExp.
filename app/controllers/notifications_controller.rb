@@ -3,8 +3,9 @@ class NotificationsController < ApplicationController
     @notifications = Notification.all
   end
 
-  def show
-    @notification = Notification.find(params[:id])
-    @movie = Movie.new
-  end
+  # def show
+  #   notification = Notification.find(params[:id])
+  #   movie_id = notification.save_item.api_movie_id
+  #   @movie = Movie.find(movie_id)
+  # end
 end

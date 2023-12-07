@@ -1,9 +1,6 @@
 <h1>Notification list</h1>
-
 <ul>
 <% @notifications.each do |notification| %>
-  <li><%= notification.notif_title %></li>
-  <p><%= link_to "see details", notification_path(notification) %></p>
-  <p><%= link_to notification.notif_title, movie_path %></p>
+  <p><%= link_to notification.notif_title, movie_path(notification.save_item.api_movie_id) %></p>
 <% end %>
 </ul>
