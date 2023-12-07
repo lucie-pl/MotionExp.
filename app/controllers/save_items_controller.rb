@@ -2,22 +2,15 @@ class SaveItemsController < ApplicationController
 
   def index
     save_items = SaveItem.all
+    # save_items = SaveItem.where(user: current_user)
     @history_items = save_items.select { |save_item| save_item.history }
     @watchlist_items = save_items.reject { |save_item| save_item.history }
 
-    # Might not work with the separation between watchlist and history list ! TODO !!!!!!!
-    # if params[:query].present?
-    #   sql_subquery = <<~SQL
-    #     movies.title ILIKE :query
-    #     OR movies.category ILIKE :query
-    #     OR directors.first_name ILIKE :query
-    #     OR directors.last_name ILIKE :query
-    #     OR actors.first_name ILIKE :query
-    #     OR actors.last_name ILIKE :query
-    #   SQL
-    #   save_items = save_items.joins(:directors).joins(:actors).where(sql_subquery, query: "%#{params[:query]}%").distinct
+    # if params[:history_query].present?
+    #   @history_items = Movie.find(@history_items).select { |item| item.title.downcase.include?(params[:history_query].downcase) }
+    # elsif params[:watchlist_query].present?
+    #   @watchlist_items = Movie.find(@watchlist_items).select { |item| item.title.downcase.include?(params[:watchlist_query].downcase) }
     # end
-
   end
 
   def create
@@ -39,7 +32,6 @@ class SaveItemsController < ApplicationController
     redirect_to movie_path(@save_item)
   end
 
-
   private
 
   def save_item_params
@@ -49,5 +41,4 @@ class SaveItemsController < ApplicationController
   def edit_item_params
     params.require(:save_item).permit(:history, :marked, :rating)
   end
-
 end
