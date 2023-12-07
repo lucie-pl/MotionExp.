@@ -34,7 +34,9 @@ class SaveItemsController < ApplicationController
   end
 
   def update
-
+    @save_item = SaveItem.find(params[:id])
+    @save_item.update(edit_item_params)
+    redirect_to movie_path(@save_item)
   end
 
 
@@ -42,6 +44,10 @@ class SaveItemsController < ApplicationController
 
   def save_item_params
     params.require(:save_item).permit(:title, :poster, :year, :history)
+  end
+
+  def edit_item_params
+    params.require(:save_item).permit(:history, :marked, :rating)
   end
 
 end

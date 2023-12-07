@@ -1,0 +1,15 @@
+<%= simple_form_for(save_item) do |f| %>
+  <%= f.input :history, as: :hidden, input_html: { value: history } %>
+
+  <% if action == "Add to watchlist" %>
+    <%= f.submit "Add to watchlist", class: "btn btn-primary", id: "add_watchlist"%>
+  <% elsif action == "Add to history" %>
+    <%= f.submit "Add to history", class: "btn btn-success", id: "add_history"%>
+  <% elsif action == "Get notifications" %>
+    <%= f.input :marked, as: :hidden, input_html: { value: marked } %>
+    <%= f.submit "Get notifications", class: "btn btn-warning", id: "get_notifications" %>
+  <% else action == "Rate the movie" %>
+    <%= f.input :rating, collection: (0..5), input_html: { value: save_item.rating } %>
+    <%= f.submit "Rate the movie", class: "btn btn-warning", id: "rate_movie" %>
+  <% end %>
+<% end %>

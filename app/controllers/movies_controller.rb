@@ -19,6 +19,7 @@ class MoviesController < ApplicationController
   def show
     # As we will get info on movies from the API, we may need to change the code below
     @movie = Movie.find(params[:api_id])
+    @current_save_item = SaveItem.where(user: current_user, api_movie_id: @movie.id).first
     @save_item = SaveItem.new
   end
 
