@@ -12,12 +12,18 @@
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="watchlist-tab-pane" role="tabpanel" aria-labelledby="watchlist-tab" tabindex="0">
       <% @watchlist_items.each do |watchlist_item| %>
-        <p><%= image_tag watchlist_item.poster %></p>
+        <p> <%= link_to movie_path(watchlist_item.api_movie_id) do %>
+              <%= image_tag watchlist_item.poster %>
+            <% end %>
+        </p>
       <% end %>
     </div>
     <div class="tab-pane fade" id="history-tab-pane" role="tabpanel" aria-labelledby="history-tab" tabindex="0">
       <% @history_items.each do |history_item| %>
-        <p><%= image_tag history_item.poster %></p>
+        <p> <%= link_to movie_path(history_item.api_movie_id) do %>
+              <%= image_tag history_item.poster %>
+            <% end %>
+        </p>
       <% end %>
     </div>
 
