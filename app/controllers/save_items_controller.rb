@@ -32,6 +32,11 @@ class SaveItemsController < ApplicationController
     end
   end
 
+  def update
+
+  end
+
+
   private
 
   def save_item_params
