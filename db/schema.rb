@@ -78,7 +78,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_211820) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "rating", default: 0, null: false
-    t.text "comment"
     t.index ["user_id"], name: "index_save_items_on_user_id"
   end
 
