@@ -24,6 +24,7 @@ class SaveItemsController < ApplicationController
     @save_item = SaveItem.new(save_item_params)
     @save_item.api_movie_id = params[:movie_api_id]
     @save_item.user = current_user
+
     if @save_item.save
       redirect_to movie_path(params[:movie_api_id])
     else
