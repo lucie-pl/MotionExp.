@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 
   def index
-    # to test the controller but as we will get info on movies from the API, we will need to change the code below
+    # As we will get info on movies from the API, we may need to change the code below
     @movies = Movie.all
     if params[:query].present?
       sql_subquery = <<~SQL
@@ -17,16 +17,10 @@ class MoviesController < ApplicationController
   end
 
   def show
-    # to test the controller but as we will get info on movies from the API, we will need to change the code below
-
+    # As we will get info on movies from the API, we may need to change the code below
     @movie = Movie.find(params[:api_id])
-
-    # There may be a better way to do this (to avoid several lines of code here)
-    # Doing simply @save_item.movie = @movie does not work (probably because the Movie table has no associations)
     @current_save_item = SaveItem.where(user: current_user, api_movie_id: @movie.id).first
-
     @save_item = SaveItem.new
-
   end
 
 end
