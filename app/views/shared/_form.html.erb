@@ -3,6 +3,7 @@
   <%= f.input :poster, as: :hidden, input_html: { value: movie.poster } %>
   <%= f.input :year, as: :hidden, input_html: { value: movie.year } %>
   <%= f.input :history, as: :hidden, input_html: { value: history } %>
+
   <% if history %>
     <%= f.submit "Add to history", class: "btn btn-success", id: "add_history"%>
   <% else %>

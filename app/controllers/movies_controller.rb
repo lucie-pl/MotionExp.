@@ -23,6 +23,8 @@ class MoviesController < ApplicationController
 
     # There may be a better way to do this (to avoid several lines of code here)
     # Doing simply @save_item.movie = @movie does not work (probably because the Movie table has no associations)
+    @current_save_item = SaveItem.where(user: current_user, api_movie_id: @movie.id).first
+
     @save_item = SaveItem.new
 
   end
