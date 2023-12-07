@@ -4,11 +4,9 @@
   <%= f.input :year, as: :hidden, input_html: { value: movie.year } %>
   <%= f.input :history, as: :hidden, input_html: { value: history } %>
 
-  <% if action == "Add to watchlist" %>
-    <%= f.submit "Add to watchlist", class: "btn btn-primary", id: "add_watchlist"%>
-  <% elsif action == "Add to history" %>
+  <% if history %>
     <%= f.submit "Add to history", class: "btn btn-success", id: "add_history"%>
-  <% elsif action == "Get notifications" %>
-    <% f.submit "Get notifications", class: "btn btn-warning", id: "get_notifications" %>
+  <% else %>
+    <%= f.submit "Add to watchlist", class: "btn btn-primary", id: "add_watchlist"%>
   <% end %>
 <% end %>
