@@ -1,35 +1,69 @@
 
 <div class="container-fluid pt-1">
 
+  <%# Row 1 %>
   <div class="row text-center mt-5">
       <h1 class="fw-bolder">Welcome <%= current_user.first_name %> !</h1>
   </div>
 
-  <div class="row bg-white text-black my-5">
-    <p class="fw-bold">Among your friends' Watchlists</p>
-    <div class="col">
-      <%= image_tag "", width: 60%>
-      picture 1
+  <%# Row 2 %>
+  <div class="row mt-5 mb-3 mx-1 gx-5">
+
+    <div class="fw-bold mb-1 pe-0 ps-0">
+
+      <p class="mb-0">
+        Among your friends' Watchlists
+      </p>
+
+      <div class="row bg-white text-black mx-0 rounded-3">
+
+        <div class="col d-flex justify-content-center ps-2 pe-0 py-2">
+          <%= image_tag "all-of-us-strangers.jpg", width: 90 %>
+        </div>
+
+        <div class="col d-flex justify-content-center ps-0 pe-0 py-2">
+            <%= image_tag "poor-things.jpg", width: 90 %>
+        </div>
+
+        <div class="col d-flex justify-content-center ps-0 pe-2 py-2">
+          <%= image_tag "wonka.jpg", width: 90 %>
+        </div>
+
+      </div>
+
     </div>
-    <div class="col">
-      picture 2
-    </div>
-    <div class="col">
-      picture 3
-    </div>
+
   </div>
 
-  <div class="row bg-white text-black my-5">
-    <p class="fw-bold">Upcoming films</p>
-    <div class="col">
-      picture 1
-    </div>
-    <div class="col">
-      picture 2
-    </div>
-    <div class="col">
-      picture 3
-    </div>
-  </div>
+  <%# Row 3 %>
+  <div class="row mt-3 mb-4 mx-1 gx-5">
 
-</div>
+    <div class="fw-bold mb-1 pe-0 ps-0">
+
+      <p class="mb-0">
+        Upcoming films
+      </p>
+
+      <div class="row bg-white text-black mx-0 rounded-3">
+
+        <div class="col d-flex justify-content-center ps-2 pe-0 py-2">
+          <%= image_tag "aquaman-2.jpg", width: 90 %>
+        </div>
+
+        <div class="col d-flex justify-content-center ps-0 pe-0 py-2">
+            <%= image_tag "dune-2.jpg", width: 90 %>
+        </div>
+
+        <div class="col d-flex justify-content-center ps-0 pe-2 py-2">
+          <%= image_tag "furriosa.jpg", width: 90 %>
+        </div>
+
+        <div class="bg-dark">
+          <i class="fa-solid fa-chevron-right fa-xs" style="color: #FFFFFF;"></i>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
