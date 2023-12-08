@@ -1,0 +1,28 @@
+ul.no-bullets {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.movie-title {
+ font-family: 'Passion One', sans-serif;
+ font-size: 24px;
+ margin-bottom: 2px;
+}
+#director-name {
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 3px;
+  font-family: 'Inter', sans-serif;
+}
+
+#year-category {
+  font-size: 13px;
+  margin-bottom: 3px;
+  font-family: 'Inter', sans-serif;
+}
+
+#casting {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+}
