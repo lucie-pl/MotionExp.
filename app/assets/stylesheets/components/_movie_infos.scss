@@ -1,3 +1,10 @@
+#movie-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+
 ul.no-bullets {
   list-style-type: none;
   margin: 0;
@@ -25,4 +32,50 @@ ul.no-bullets {
 #casting {
   font-family: 'Inter', sans-serif;
   font-size: 13px;
+  margin-bottom: 1px;
+}
+
+.synopsis {
+  margin-top: 16px;
+  padding-left: 14px;
+  padding-right: 14px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  text-align: justify;
+}
+
+.btn-light {
+  background-color: #2D2A2A;
+  color: white;
+  border: solid #2D2A2A 1px;
+  padding: 3px;
+  width: 2rem;
+  height: 2rem;
+}
+
+.spacing {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.movie-d-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ratings {
+  background-color: #989898;
+  border-radius: 4px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+
+}
+
+.rating-color{
+  color:#4F4F4F !important;
 }
