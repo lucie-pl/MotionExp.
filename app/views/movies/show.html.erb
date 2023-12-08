@@ -25,13 +25,16 @@
           <p id="casting"><%= @actor_list %></p>
         </ul>
 
-        <div class="ratings">
-              <i class="fa fa-star "></i>
-              <i class="fa fa-star "></i>
-              <i class="fa fa-star "></i>
-              <i class="fa fa-star "></i>
-              <i class="fa fa-star rating-color"></i>
-        </div>
+        <% if @current_save_item %>
+          <div class="ratings">
+                <%# <i class="fa fa-star "></i>
+                <i class="fa fa-star "></i>
+                <i class="fa fa-star "></i>
+                <i class="fa fa-star "></i>
+                <i class="fa fa-star rating-color"></i> %>
+                <%=  @current_save_item.rating %>
+          </div>
+        <% end %>
 
       </div>
       <div class="synopsis">
