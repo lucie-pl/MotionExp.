@@ -17,8 +17,8 @@ Actor.destroy_all
 Director.destroy_all
 Movie.destroy_all
 
-User.create(first_name: "Lorry", last_name: "Brossard", username: "Lorry", email: "lorry_b@gmail.com", password: "123456")
-User.create(first_name: "Hongri", last_name: "Ma", username: "Hongri", email: "hongri_m@gmail.com", password: "123456")
+User.create(first_name: "Lucie", last_name: "Plantier", username: "Lucie", email: "lucie_p@gmail.com", password: "123456")
+# User.create(first_name: "Hongri", last_name: "Ma", username: "Hongri", email: "hongri_m@gmail.com", password: "123456")
 
 Actor.create(first_name: "Leonardo", last_name: "DiCaprio")
 Actor.create(first_name: "Matt", last_name: "Demon")
