@@ -21,6 +21,15 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:api_id])
     @current_save_item = SaveItem.where(user: current_user, api_movie_id: @movie.id).first
     @save_item = SaveItem.new
-  end
 
+
+    @actor_list= ""
+    @movie.actors.each do |actor|
+      if @actor_list == ""
+        @actor_list+= "#{actor.first_name} #{actor.last_name}"
+      else
+        @actor_list+= ", #{actor.first_name} #{actor.last_name}"
+      end
+    end
+  end
 end

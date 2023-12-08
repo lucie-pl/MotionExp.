@@ -1,24 +1,27 @@
 <div class= "container">
   <h1>Movie showpage</h1>
 
-  <div>
-    <div>poster</div>
-    <div id="movie-infos">
-      <h2><%= @movie.title %></h2>
-      <ul>
-        <% @movie.directors.each do |director| %>
-            <h4><%= director.first_name%> <%= director.last_name%></h4>
-        <% end %>
+  <div class="row">
 
-        <p><%= @movie.year %> • <%= movie.category %></p>
-
-        <% @movie.actors.each do |actor| %>
-            <p><%= actor.first_name%> <%= actor.last_name%></p>
-        <% end %>
-      </ul>
-      <h3></h3>
-
+    <div class="col-4 padding-right-0">
+      <%= image_tag @movie.poster, width: 100 %>
     </div>
+
+    <div id="movie-infos" class="col-8">
+      <div>
+      <h3 class="movie-title"><%= @movie.title.upcase %></h3>
+      <ul class="no-bullets">
+        <% @movie.directors.each do |director| %>
+            <p id="director-name"><%= director.first_name%> <%= director.last_name%></p id="director-name">
+        <% end %>
+
+        <p id="year-category"><%= @movie.year %> • <%= @movie.category %></p>
+
+        <p id="casting"><%= @actor_list %></p>
+      </ul>
+      </div>
+    </div>
+
   </div>
 
 
