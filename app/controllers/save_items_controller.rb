@@ -29,7 +29,7 @@ class SaveItemsController < ApplicationController
   def update
     @save_item = SaveItem.find(params[:id])
     @save_item.update(edit_item_params)
-    redirect_to movie_path(@save_item)
+    redirect_to movie_path(@save_item.movie_api_id)
   end
 
   private
