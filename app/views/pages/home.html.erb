@@ -1,35 +1,87 @@
 
 <div class="container-fluid pt-1">
 
+  <%# Row 1 %>
   <div class="row text-center mt-5">
-      <h1 class="fw-bolder">Welcome <%= current_user.first_name %> !</h1>
+      <h1 class="fw-bold" id="welcome">Welcome <%= current_user.first_name %> !</h1>
   </div>
 
-  <div class="row bg-white text-black my-5">
-    <p class="fw-bold">Among your friends' Watchlists</p>
-    <div class="col">
-      <%= image_tag "", width: 60%>
-      picture 1
+  <%# Row 2 - Among your friends' WL %>
+  <div class="row mt-4 mb-3 mx-1 gx-5">
+
+    <div class="fw-normal mb-1 pe-0 ps-0">
+
+      <p class="mb-0">
+        Among your friends' Watchlists
+      </p>
+
+      <div class="row bg-white text-black mx-0 rounded-3">
+
+        <div class="col d-flex justify-content-center ps-2 pe-0 pt-2 pb-O">
+          <%= image_tag "all-of-us-strangers.jpg", width: 90 %>
+        </div>
+
+        <div class="col d-flex justify-content-center ps-0 pe-0 pt-2 pb-0">
+            <%= image_tag "poor-things.jpg", width: 90 %>
+        </div>
+
+        <div class="col d-flex justify-content-center ps-0 pe-1 pt-2 pb-0">
+          <%= image_tag "wonka.jpg", width: 90 %>
+        </div>
+
+        <%# Row for friends name %>
+        <div class="row fw-light pe-0 ps-0">
+
+          <div class="col d-flex ps-0 pe-0 pb-1" id="colon-icon-1">
+            <i class="fa-solid fa-user fa-2xs pt-2" style="color: #D02121;"></i>
+            <p class="mb-0 ps-1" id="friend_name">Lorry-B</p>
+          </div>
+
+          <div class="col d-flex ps-0 pe-0 pb-1" id="colon-icon-2">
+            <i class="fa-solid fa-user fa-2xs pt-2" style="color: #D02121;"></i>
+            <p class="mb-0 ps-1" id="friend_name">Hongri-M</p>
+          </div>
+
+          <div class="col d-flex ps-0 pe-0 pb-1" id="colon-icon-3">
+            <i class="fa-solid fa-user fa-2xs pt-2" style="color: #D02121;"></i>
+            <p class="mb-0 ps-1" id="friend_name">Lorry-B</p>
+          </div>
+
+        </div>
+      </div>
+
     </div>
-    <div class="col">
-      picture 2
-    </div>
-    <div class="col">
-      picture 3
-    </div>
+
   </div>
 
-  <div class="row bg-white text-black my-5">
-    <p class="fw-bold">Upcoming films</p>
-    <div class="col">
-      picture 1
+
+  <%# Row 4 Upcoming films %>
+  <div class="row mt-3 mb-4 mx-1 gx-5">
+
+    <div class="fw-normal mb-1 pe-0 ps-0">
+
+      <p class="mb-0">
+        Upcoming films
+      </p>
+
+      <div class="row bg-white text-black mx-0 rounded-3">
+
+        <div class="col d-flex justify-content-center ps-2 pe-0 py-2">
+          <%= image_tag "aquaman-2.jpg", width: 90 %>
+        </div>
+
+        <div class="col d-flex justify-content-center ps-0 pe-0 py-2">
+            <%= image_tag "dune-2.jpg", width: 90 %>
+        </div>
+
+        <div class="col d-flex justify-content-center ps-0 pe-2 py-2">
+          <%= image_tag "furriosa.jpg", width: 90 %>
+        </div>
+
+      </div>
+
     </div>
-    <div class="col">
-      picture 2
-    </div>
-    <div class="col">
-      picture 3
-    </div>
+
   </div>
 
 </div>
