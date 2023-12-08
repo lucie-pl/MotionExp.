@@ -1,0 +1,21 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-top-lewagon">
+
+  <div class="container-fluid py-1">
+
+    <%= link_to root_path do %>
+      <%= image_tag "MotionExp-logo.png", height: "30", width: "160" %>
+    <% end %>
+
+    <div >
+        <% if user_signed_in? %>
+          <a href="#" class="avatar" >
+            <%= image_tag "lucie.png", class: "avatar" %>
+          </a>
+        <% else %>
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        <% end %>
+    </div>
+
+  </div>
+
+</div>
