@@ -1,5 +1,27 @@
 <div class= "container">
   <h1>Movie showpage</h1>
+
+  <div>
+    <div>poster</div>
+    <div id="movie-infos">
+      <h2><%= @movie.title %></h2>
+      <ul>
+        <% @movie.directors.each do |director| %>
+            <h4><%= director.first_name%> <%= director.last_name%></h4>
+        <% end %>
+
+        <p><%= @movie.year %> • <%= movie.category %></p>
+
+        <% @movie.actors.each do |actor| %>
+            <p><%= actor.first_name%> <%= actor.last_name%></p>
+        <% end %>
+      </ul>
+      <h3></h3>
+
+    </div>
+  </div>
+
+
   <br>
   <%=link_to 'Back to search page', movies_path, class:"btn btn-primary mt-2"%>
   <br>

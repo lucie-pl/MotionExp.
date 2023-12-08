@@ -1,5 +1,35 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
+<div class="container-fluid pt-1">
 
-<%=link_to 'Search for a movie', movies_path, class:"btn btn-primary mt-2"%>
+  <div class="row text-center mt-5">
+      <h1 class="fw-bolder">Welcome <%= current_user.first_name %> !</h1>
+  </div>
+
+  <div class="row bg-white text-black my-5">
+    <p class="fw-bold">Among your friends' Watchlists</p>
+    <div class="col">
+      <%= image_tag "", width: 60%>
+      picture 1
+    </div>
+    <div class="col">
+      picture 2
+    </div>
+    <div class="col">
+      picture 3
+    </div>
+  </div>
+
+  <div class="row bg-white text-black my-5">
+    <p class="fw-bold">Upcoming films</p>
+    <div class="col">
+      picture 1
+    </div>
+    <div class="col">
+      picture 2
+    </div>
+    <div class="col">
+      picture 3
+    </div>
+  </div>
+
+</div>

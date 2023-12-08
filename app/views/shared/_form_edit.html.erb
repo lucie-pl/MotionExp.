@@ -4,13 +4,13 @@
   <% if action == "Add to watchlist" %>
     <div>
     <%#= f.submit "Add to watchlist", class: "btn btn-primary", id: "add_watchlist"%>
-    <button class= "popup-button" type="submit"><i class="fa-regular fa-eye fa-sm btn-add-to-watchlist-active"></i></button>
+    <button class= "popup-button" type="submit"><i class="fa-regular fa-eye fa-sm <%= history ? "btn-add-to-watchlist" : "btn-add-to-watchlist-active" %>"></i></button>
     <p>Add to watchlist</p>
     </div>
   <% elsif action == "Add to history" %>
     <div>
     <%#= f.submit "Add to history", class: "btn btn-success", id: "add_history"%>
-    <button class="popup-button" type="submit"><i class="fa-regular fa-clock fa-sm btn-add-to-history-active"></i></button>
+    <button class="popup-button" type="submit"><i class="fa-regular fa-clock fa-sm <%= history ? "btn-add-to-history" : "btn-add-to-history-active" %>"></i></button>
     <p>Add to history list</p>
     </div>
 
@@ -18,7 +18,7 @@
     <div>
       <%= f.input :marked, as: :hidden, input_html: { value: marked } %>
       <%#= f.submit "Get notifications", class: "btn btn-warning", id: "get_notifications" %>
-      <button class="popup-button" type="submit"><i class="fa-solid fa-cookie-bite fa-sm btn-add-to-notifications-active"></i></button>
+      <button class="popup-button" type="submit"><i class="fa-solid fa-cookie-bite fa-sm <%= marked ? "btn-add-to-notifications" : "btn-add-to-notifications-active" %>"></i></button>
       <p>Get notified when in cinemas</p>
     </div>
 
