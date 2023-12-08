@@ -1,5 +1,7 @@
 <div class= "container">
-  <h1>Movie showpage</h1>
+
+  <%=link_to '<', movies_path, class:"btn btn-light mt-2"%>
+  <br><br>
 
   <div class="row">
 
@@ -8,39 +10,38 @@
     </div>
 
     <div id="movie-infos" class="col-8">
-      <div>
-      <h3 class="movie-title"><%= @movie.title.upcase %></h3>
-      <ul class="no-bullets">
-        <% @movie.directors.each do |director| %>
-            <p id="director-name"><%= director.first_name%> <%= director.last_name%></p id="director-name">
-        <% end %>
 
-        <p id="year-category"><%= @movie.year %> • <%= @movie.category %></p>
+      <h3 class="movie-title"><%= @movie.title.upcase.truncate(20) %></h3>
 
-        <p id="casting"><%= @actor_list %></p>
-      </ul>
+        <ul class="no-bullets spacing">
+          <div class="movie-d-y">
+            <div class="movie-directors">
+            <% @movie.directors.each do |director| %>
+                <p id="director-name"><%= director.first_name%> <%= director.last_name%></p id="director-name">
+            <% end %>
+            </div>
+            <p id="year-category"><%= @movie.year %> • <%= @movie.category %></p>
+          </div>
+          <p id="casting"><%= @actor_list %></p>
+        </ul>
+
+        <div class="ratings">
+              <i class="fa fa-star "></i>
+              <i class="fa fa-star "></i>
+              <i class="fa fa-star "></i>
+              <i class="fa fa-star "></i>
+              <i class="fa fa-star rating-color"></i>
+        </div>
+
+      </div>
+      <div class="synopsis">
+        <%= @movie.synopsis %>
       </div>
     </div>
 
   </div>
 
 
-  <br>
-  <%=link_to 'Back to search page', movies_path, class:"btn btn-primary mt-2"%>
-  <br>
-  <br>
-  <h1><%= @movie.title %></h1>
-  <ul>
-    <% @movie.actors.each do |actor| %>
-        <p><%= actor.first_name%> <%= actor.last_name%></p>
-    <% end %>
-    <% @movie.directors.each do |director| %>
-        <p><%= director.first_name%> <%= director.last_name%></p>
-    <% end %>
-  </ul>
-
-  <br>
-  <%= image_tag @movie.poster%>
   <% if @current_save_item %>
     <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: false, action: "Add to watchlist", marked: false %>
     <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: true, action: "Add to history", marked: false %>
