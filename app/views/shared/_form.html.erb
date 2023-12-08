@@ -5,7 +5,7 @@
   <%= f.input :history, as: :hidden, input_html: { value: history } %>
 
   <% if history %>
-    <%= f.submit "Add to history", class: "btn btn-success", id: "add_history"%>
+    <%= f.submit "Add to history", type: :image, src: "lucie.png", class: "btn-add-to_watchlist ", id: "add_history"%>
   <% else %>
     <%= f.submit "Add to watchlist", class: "btn btn-primary", id: "add_watchlist"%>
   <% end %>
