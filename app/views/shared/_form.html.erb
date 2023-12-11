@@ -4,9 +4,22 @@
   <%= f.input :year, as: :hidden, input_html: { value: movie.year } %>
   <%= f.input :history, as: :hidden, input_html: { value: history } %>
 
-  <% if history %>
-    <%= f.submit "Add to history", type: :image, src: "lucie.png", class: "btn-add-to_watchlist", class: "btn btn-success", id: "add_history"%>
-  <% else %>
-    <%= f.submit "Add to watchlist", class: "btn btn-primary", id: "add_watchlist"%>
-  <% end %>
+  <div id="modal-watchlist-history">
+    <% if history %>
+        <div id="modal-button-new">
+          <%#= f.submit "Add to history", class: "btn-add-to_watchlist", class: "btn btn-success", id: "add_history"%>
+          <button class="popup-button" type="submit"><i class="fa-regular fa-clock fa-2x btn-add-to-history"></i></button>
+          <p class="text">Add to history list</p>
+        </div>
+
+    <% else %>
+
+      <div id="modal-button-new">
+        <%#= f.submit "Add to watchlist", class: "btn btn-primary", id: "add_watchlist"%>
+        <button class= "popup-button" type="submit"><i class="fa-regular fa-eye fa-2x btn-add-to-watchlist"></i></button>
+        <p class="text">Add to watchlist</p>
+      </div>
+    <% end %>
+  </div>
+
 <% end %>

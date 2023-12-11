@@ -1,11 +1,15 @@
 .movie-poster-show {
   padding-right: 0px;
 }
+img {
+  box-shadow: 0px 0px 1px;
+}
 #movie-infos {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: start;
+  position: relative;
 }
 
 ul.no-bullets {
@@ -73,15 +77,16 @@ ul.no-bullets {
 
 #more-infos-button {
   color: black;
-  background-color: #989898;
+  background-color: #4F4F4F;
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 7px;
   padding-right: 7px;
+  border: 0px;
   border-radius: 3px;
-  position: relative;
-  left: 196px;
-  top: -147px;
+  position: absolute;
+  right: 10px;
+  top: 0px;
 }
 
 .ratings {
@@ -131,9 +136,10 @@ ul.no-bullets {
 
 .box {
   background-color: #AB2828;
-  padding: 5px;
+  padding: 8px;
   border-radius: 8px;
-  margin-left: 6px;
-  margin-right: 6px;
+  margin-left: 12px;
+  margin-right: 12px;
   font-weight: 700;
+  color: white;
 }
