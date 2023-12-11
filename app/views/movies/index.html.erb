@@ -1,14 +1,25 @@
+
+<%= render "shared/search", path: movies_path %>
 <div class="container">
-  <%= render "shared/search", path: movies_path %>
-
-  <%# Using the seed file for the moment, we need to call the API %>
-
-  <ul>
-    <% @movies.each do |movie| %>
-        <li><%= movie.title %>, <%= movie.year %></li>
-
-        <%=link_to 'See details', movie_path(movie), class:"btn btn-primary mt-2"%>
-    <% end %>
-  </ul>
-
+  <div class="row">
+    <div class="col-12">
+      <div class="movie_cards">
+          <% if @movies.any? %>
+            <% @movies.each do |movie| %>
+        <div class="movie_card justify-content-center">
+        <div class="movie_poster">
+          <%= link_to image_tag(movie.poster, size: "150x200"), movie_path(movie) %>
+        </div>
+              <div class="movie_card-body text-center">
+                <h6 class="card-title"><%= movie.title.upcase %></h6>
+                <p><%= movie.year %></p>
+              </div>
+        </div>
+            <% end %>
+          <% else %>
+            <em>Sorry, no movies found.</em>
+          <% end %>
+      </div>
+    </div>
+  </div>
 </div>
