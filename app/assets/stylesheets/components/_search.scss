@@ -46,9 +46,9 @@
   width: 150px;
   height: 250px;
   background-color: #4F4F4F;
-  border: 2px solid grey;
+  // border: 2px solid grey;
+  box-shadow: 0 0 1px;
   margin-bottom: 8px;
-  // margin-left: 13px;
 
   .movie_poster {
     object-fit: cover;
