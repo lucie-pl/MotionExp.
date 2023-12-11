@@ -1,11 +1,18 @@
 <div class= "container">
 
+    <%#=link_to icon('fa-solid', 'fa-angle-left'), :back %>
+
+
+  <%#=link_to '<', movies_path do %>
+    <%#= icon('fa-solid', 'fa-angle-left') %>
+  <%# end %>
+
   <%=link_to '<', movies_path, class:"btn btn-light mt-2"%>
   <br><br>
 
   <div class="row">
 
-    <div class="col-4 padding-right-0">
+    <div class="col-4 movie-poster-show">
       <%= image_tag @movie.poster, width: 100 %>
     </div>
 
@@ -36,12 +43,36 @@
           </div>
         <% end %>
 
+        <div id="more-infos-button">
+          <i class="fa-solid fa-ellipsis"></i>
+        </div>
+
       </div>
       <div class="synopsis">
         <%= @movie.synopsis %>
       </div>
     </div>
 
+    <div class="screening-infos">
+      <%# if @screenings.present? %>
+        <%# @screenings.each do |screening| %>
+          <div>
+            <h5>Cinéma du Parc</h5> <!-- Enter code with cinema name -->
+
+            <div class="screening-time">
+              <p>Friday, December 15, (English subtitles)</p> <!-- Enter date time + version -->
+              <div>
+                <ul class="time">
+                  <li class="box">4:00PM</li>
+                  <li class="box">6:00PM</li>
+                  <li class="box">8:00PM</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <%# end %>
+      <%# end %>
+    </div>
   </div>
 
 

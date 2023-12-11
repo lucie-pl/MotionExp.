@@ -1,3 +1,6 @@
+.movie-poster-show {
+  border: solid 1px #4F4F4F;
+}
 #movie-infos {
   display: flex;
   flex-direction: column;
@@ -13,25 +16,26 @@ ul.no-bullets {
 
 .movie-title {
  font-family: 'Passion One', sans-serif;
- font-size: 24px;
+ font-size: 30px;
  margin-bottom: 2px;
 }
+
 #director-name {
-  font-size: 14px;
+  font-size: 17px;
   font-style: italic;
   margin-bottom: 3px;
   font-family: 'Inter', sans-serif;
 }
 
 #year-category {
-  font-size: 13px;
+  font-size: 14px;
   margin-bottom: 3px;
   font-family: 'Inter', sans-serif;
 }
 
 #casting {
   font-family: 'Inter', sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   margin-bottom: 1px;
 }
 
@@ -40,8 +44,9 @@ ul.no-bullets {
   padding-left: 14px;
   padding-right: 14px;
   font-family: "Inter", sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   text-align: justify;
+  margin-bottom: 20px;
 }
 
 .btn-light {
@@ -66,6 +71,19 @@ ul.no-bullets {
   justify-content: space-between;
 }
 
+#more-infos-button {
+  color: black;
+  background-color: #989898;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 7px;
+  padding-right: 7px;
+  border-radius: 3px;
+  position: relative;
+  left: 196px;
+  top: -147px;
+}
+
 .ratings {
   background-color: #989898;
   border-radius: 4px;
@@ -78,4 +96,43 @@ ul.no-bullets {
 
 .rating-color{
   color:#4F4F4F !important;
+}
+
+.screening-infos {
+  margin-top: 25px;
+  background-color: #E3E1E1;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 4px;
+  border-radius: 4px;
+  color: black;
+}
+
+.screening-time {
+  background-color: white;
+  border: solid 1px black;
+  border-radius: 4px;
+  color: black;
+  padding: 5px;
+  margin: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+
+}
+
+.time {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+
+.box {
+  background-color: #AB2828;
+  padding: 5px;
+  border-radius: 8px;
+  margin-left: 6px;
+  margin-right: 6px;
+  font-weight: 700;
 }

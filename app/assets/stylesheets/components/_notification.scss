@@ -1,0 +1,21 @@
+ul.notification {
+  list-style-type: none;
+  padding: 0;
+  margin: 5px;
+}
+
+.notification-card {
+  background-color: #AB2828;
+  color: white;
+  border-radius: 5px;
+  margin-top: 13px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.notification-card a {
+  text-decoration: none;
+  color: white;
+}

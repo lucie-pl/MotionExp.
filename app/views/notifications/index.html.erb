@@ -1,8 +1,23 @@
 <div class="container-fluid">
-  <h1>Notifications</h1>
-  <ul>
-  <% @notifications.each do |notification| %>
-    <p><%= link_to notification.notif_title, movie_path(notification.save_item.api_movie_id) %></p>
-  <% end %>
-  </ul>
+  <div class="row text-center mt-5 mb-5">
+    <h2 class="fw-medium">Your notifications !</h2 class="fw-medium">
+  </div>
+
+
+  <div>
+    <ul class="notification">
+    <% if @notifications.present? %>
+      <% @notifications.each do |notification| %>
+      <li class="notification-card"><%= link_to notification.notif_title, movie_path(notification.save_item.api_movie_id) %></li>
+      <% end %>
+    <% else %>
+      <p>You don't have any notifications yet.</p>
+      <br>
+      <p>Add films to your watchlist or history list and mark them to
+      be notifed when they are programmed in a cinema near you !</p>
+    <% end %>
+    </ul>
+  </div>
+
+
 </div>
