@@ -35,14 +35,14 @@
  .movie_cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 8px;
+  grid-gap: 9px;
+  justify-items: center;
 }
 
 .movie_card {
   width: 150px;
   height: 250px;
-  border: 1px solid grey;
-  margin-left: 13px;
+  background-color: #4F4F4F;
 
   .movie_poster {
     object-fit: cover;
@@ -52,6 +52,14 @@
   .movie_card-body {
     width: 150px;
     height: 30px;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+
+  }
+
+  .movie_card-body p {
+    font-size: 13px;
+    font-style: italic;
   }
 }
 .details_link {
