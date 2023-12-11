@@ -45,6 +45,7 @@
 .movie_card {
   width: 150px;
   height: 250px;
+  background-color: #4F4F4F;
   border: 2px solid grey;
   margin-bottom: 8px;
   // margin-left: 13px;
@@ -57,6 +58,14 @@
   .movie_card-body {
     width: 150px;
     height: 30px;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+
+  }
+
+  .movie_card-body p {
+    font-size: 13px;
+    font-style: italic;
   }
 }
 .details_link {
