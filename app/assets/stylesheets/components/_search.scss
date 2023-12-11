@@ -39,13 +39,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 8px;
+  justify-items: center;
 }
 
 .movie_card {
   width: 150px;
   height: 250px;
   border: 2px solid grey;
-  margin-left: 13px;
+  margin-bottom: 8px;
+  // margin-left: 13px;
 
   .movie_poster {
     object-fit: cover;

@@ -45,19 +45,19 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 8px;
+    justify-items: center;
 
     .movie_list {
       width: 150px;
       height: 200px;
       border: 2px solid grey;
-      object-fit: cover;
-      margin-bottom: 5px;
-      margin-left: 5px;
+      margin-bottom: 12px;
     }
   }
 
   .movie_lists .movie_list .m_picture {
-    width: 150px;
-    height: 200px;
+    width: 145px;
+    height: 195px;
+    object-fit: cover;
   }
 }
