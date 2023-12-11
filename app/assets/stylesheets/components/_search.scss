@@ -1,8 +1,59 @@
-.movie-list {
-
-}
 
 .poster {
   height: 150px;
   width: 110px;
+}
+
+.search {
+  display: flex;
+  background-color: white;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 340px;
+  height: 35px;
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    color: darkgray;
+    align-items: center;
+    width: 30px;
+    text-align: center;
+  }
+  .d-flex {
+    // outline: none;
+    border: none;
+    width: 310px;
+    // background-color: transparent;
+  }
+}
+ ::placeholder {
+  font-size: 15px;
+ }
+
+ .movie_cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
+}
+
+.movie_card {
+  width: 150px;
+  height: 250px;
+  border: 1px solid grey;
+  margin-left: 13px;
+
+  .movie_poster {
+    object-fit: cover;
+    margin-bottom: 2px;
+  }
+
+  .movie_card-body {
+    width: 150px;
+    height: 30px;
+  }
+}
+.details_link {
+  height: 10px;
 }
