@@ -1,5 +1,5 @@
 .movie-poster-show {
-  border: solid 1px #4F4F4F;
+  padding-right: 0px;
 }
 #movie-infos {
   display: flex;
@@ -126,6 +126,7 @@ ul.no-bullets {
   display: flex;
   list-style: none;
   justify-content: center;
+  padding-left: 0px;
 }
 
 .box {

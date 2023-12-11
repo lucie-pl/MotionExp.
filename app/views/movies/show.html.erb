@@ -1,19 +1,15 @@
 <div class= "container">
 
-    <%#=link_to icon('fa-solid', 'fa-angle-left'), :back %>
+  <%= link_to :back do %>
+    <p class="btn btn-light mt-2"> < </p>
+  <% end %>
 
-
-  <%#=link_to '<', movies_path do %>
-    <%#= icon('fa-solid', 'fa-angle-left') %>
-  <%# end %>
-
-  <%=link_to '<', movies_path, class:"btn btn-light mt-2"%>
-  <br><br>
+  <br>
 
   <div class="row">
 
     <div class="col-4 movie-poster-show">
-      <%= image_tag @movie.poster, width: 100 %>
+      <%= image_tag @movie.poster, width: "100%" %>
     </div>
 
     <div id="movie-infos" class="col-8">
