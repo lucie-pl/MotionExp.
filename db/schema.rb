@@ -10,13 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_06_211820) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_11_174350) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "actors", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cinemas", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -54,6 +60,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_211820) do
     t.string "poster"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "actors"
+    t.string "directors"
+    t.text "trailer_url"
   end
 
   create_table "notifications", force: :cascade do |t|
@@ -82,6 +91,18 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_211820) do
     t.index ["user_id"], name: "index_save_items_on_user_id"
   end
 
+  create_table "screening_times", force: :cascade do |t|
+    t.string "date"
+    t.string "hour"
+    t.string "version"
+    t.bigint "movie_id", null: false
+    t.bigint "cinema_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cinema_id"], name: "index_screening_times_on_cinema_id"
+    t.index ["movie_id"], name: "index_screening_times_on_movie_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -105,4 +126,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_211820) do
   add_foreign_key "notifications", "users"
   add_foreign_key "save_items", "movies", column: "api_movie_id"
   add_foreign_key "save_items", "users"
+  add_foreign_key "screening_times", "cinemas"
+  add_foreign_key "screening_times", "movies"
 end
