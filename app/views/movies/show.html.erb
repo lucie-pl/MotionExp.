@@ -39,9 +39,13 @@
           </div>
         <% end %>
 
-        <div id="more-infos-button">
+
+        <button type="button" id="more-infos-button" data-bs-toggle="modal" data-bs-target="#menuModal">
           <i class="fa-solid fa-ellipsis"></i>
-        </div>
+        </button>
+        <!-- <div id="more-infos-button">
+          <i class="fa-solid fa-ellipsis"></i>
+        </div> -->
 
       </div>
       <div class="synopsis">
@@ -71,7 +75,7 @@
     </div>
   </div>
 
-
+  <!--
   <% if @current_save_item %>
     <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: false, action: "Add to watchlist", marked: false %>
     <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: true, action: "Add to history", marked: false %>
@@ -82,4 +86,40 @@
     <%= render "shared/form", movie: @movie, save_item: @save_item, history: false %>
     <%= render "shared/form", movie: @movie, save_item: @save_item, history: true %>
   <% end %>
+  -->
+
+  <div class="modal fade" id="menuModal" tabindex="-1" aria-labelledby="buttonLabel" aria-hidden="true">
+    <div class="modal-dialog modal-bottom">
+      <div class="modal-content animate-bottom">
+
+
+          <% if @current_save_item %>
+            <div class="modal-body">
+              <div id="modal-watchlist-history">
+                <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: false, action: "Add to watchlist", marked: false %>
+                <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: true, action: "Add to history", marked: false %>
+              </div>
+              <%# <%= link_to "Get notified when in cinemas" , save_item_path(@current_save_item), data: { "turbo-method": :patch } %>
+
+              <div id="separation"></div>
+
+              <div id="modal-notif">
+                <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: @current_save_item.history, action: "Get notifications", marked: true %>
+              </div>
+
+              <div id="separation"></div>
+
+              <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: @current_save_item.history, action: "Rate the movie", marked: @current_save_item.marked %>
+            </div>
+          <% else %>
+            <div class="modal-body modal-new">
+              <%= render "shared/form", movie: @movie, save_item: @save_item, history: false %>
+              <%= render "shared/form", movie: @movie, save_item: @save_item, history: true %>
+            </div>
+          <% end %>
+
+      </div>
+    </div>
+  </div>
+
 </div>

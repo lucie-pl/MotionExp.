@@ -1,0 +1,91 @@
+.modal-body {
+  background-color: #2D2A2A;
+  border-radius: 1px;
+}
+
+.modal-new {
+  display: flex;
+  justify-content: space-evenly;
+}
+.animate-bottom {
+  position: relative;
+  animation: animatebottom 0.4s;
+}
+
+.modal-bottom {
+  display: flex;
+  align-items: flex-end;
+  height: calc(100vh - 55px);
+
+}
+
+#separation {
+  border: dotted 1px white;
+  margin-top: 4px;
+  margin-bottom: -7px;
+}
+
+@keyframes animatebottom {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+#modal-watchlist-history {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#modal-notif {
+  display: flex;
+  justify-content: center;
+}
+
+#modal-button {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#modal-button-new {
+  display: flex;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.popup-button {
+  background-color: transparent;
+  border: none;
+}
+
+.btn-add-to-watchlist {
+  color: white;
+}
+
+.btn-add-to-watchlist-active {
+  color: #06d6a0;
+}
+
+.btn-add-to-history {
+  color: white;
+}
+
+.btn-add-to-history-active {
+  color: #ffd166;
+}
+
+.btn-add-to-notifications {
+  color: white;
+}
+
+.btn-add-to-notifications-active {
+  color: #ef476f;
+}
