@@ -1,7 +1,7 @@
 <div class= "container">
 
-    <%#=link_to "Back", :back %>
-    <%#= icon('fa-solid', 'fa-angle-left') %>
+    <%#=link_to icon('fa-solid', 'fa-angle-left'), :back %>
+
 
   <%#=link_to '<', movies_path do %>
     <%#= icon('fa-solid', 'fa-angle-left') %>
@@ -12,7 +12,7 @@
 
   <div class="row">
 
-    <div class="col-4 movie-poster">
+    <div class="col-4 movie-poster-show">
       <%= image_tag @movie.poster, width: 100 %>
     </div>
 
