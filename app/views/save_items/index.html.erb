@@ -15,22 +15,26 @@
 
     <div class="tab-pane fade show active" id="watchlist-tab-pane" role="tabpanel" aria-labelledby="watchlist-tab" tabindex="0">
       <%# render "shared/movie_search", history_items: false %>
-      <div class="movie-list">
+      <div class="movie_lists">
         <% @watchlist_items.each do |watchlist_item| %>
-          <%= link_to movie_path(watchlist_item.api_movie_id) do %>
-                <%= image_tag watchlist_item.poster, class: "poster" %>
-          <% end %>
+          <div class="movie_list">
+            <%= link_to movie_path(watchlist_item.api_movie_id) do %>
+              <%= image_tag watchlist_item.poster, class: "m_picture" %>
+            <% end %>
+          </div>
         <% end %>
       </div>
     </div>
     <div class="tab-pane fade" id="history-tab-pane" role="tabpanel" aria-labelledby="history-tab" tabindex="0">
       <%#= render "shared/movie_search", history_items: true %>
-      <div class="movie-list">
+      <div class="movie_lists">
         <% @history_items.each do |history_item| %>
-          <p> <%= link_to movie_path(history_item.api_movie_id) do %>
-                <%= image_tag history_item.poster, class: "poster" %>
-              <% end %>
-          </p>
+        <div class="movie_list">
+          <%= link_to movie_path(history_item.api_movie_id) do %>
+            <%= image_tag history_item.poster, class: "m_picture" %>
+          <% end %>
+        </div>
+
         <% end %>
       </div>
     </div>
