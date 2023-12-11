@@ -1,8 +1,9 @@
 class SaveItem < ApplicationRecord
   belongs_to :user
   has_many :notifications
+  belongs_to :movie, foreign_key: "api_movie_id"
 
-  validates :api_movie_id, presence: true, uniqueness: true
+  validates :api_movie_id, uniqueness: { scope: :user_id }
   validates :title, presence: true
   validates :poster, presence: true
   validates :year, presence: true

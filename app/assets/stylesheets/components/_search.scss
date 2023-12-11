@@ -21,11 +21,14 @@
     width: 30px;
     text-align: center;
   }
-  .d-flex {
-    // outline: none;
+  .search_form input {
+    outline: none;
     border: none;
     width: 310px;
     // background-color: transparent;
+  }
+  .search_form input:focus {
+    box-shadow: none;
   }
 }
  ::placeholder {
@@ -35,7 +38,7 @@
  .movie_cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 9px;
+  grid-gap: 8px;
   justify-items: center;
 }
 
@@ -43,6 +46,9 @@
   width: 150px;
   height: 250px;
   background-color: #4F4F4F;
+  border: 2px solid grey;
+  margin-bottom: 8px;
+  // margin-left: 13px;
 
   .movie_poster {
     object-fit: cover;

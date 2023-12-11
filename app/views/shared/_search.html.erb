@@ -5,7 +5,7 @@
         <i class="fa-solid fa-magnifying-glass"></i>
       </div>
 
-      <%= form_with url: path, method: :get, class: "d-flex" do %>
+      <%= form_with url: path, method: :get, class: "d-flex search_form" do %>
         <%= text_field_tag :query,
               params[:query],
               class: "form-control",
