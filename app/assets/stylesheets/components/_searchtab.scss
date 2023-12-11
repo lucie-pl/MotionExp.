@@ -50,14 +50,14 @@
     .movie_list {
       width: 150px;
       height: 200px;
-      border: 2px solid grey;
+      box-shadow: 0 0 1px;
       margin-bottom: 12px;
     }
   }
 
   .movie_lists .movie_list .m_picture {
-    width: 145px;
-    height: 195px;
+    width: 150px;
+    height: 200px;
     object-fit: cover;
   }
 }
