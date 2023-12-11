@@ -8,6 +8,35 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+require "json"
+require "open-uri"
+
+url_top_rated = "http://tmdb.lewagon.com/movie/top_rated"
+url_upcoming = "http://tmdb.lewagon.com/movie/upcoming"
+url_popular = "http://tmdb.lewagon.com/movie/popular"
+url_discover = "http://tmdb.lewagon.com/discover/movie"
+video_url = "http://tmdb.lewagon.com/movie/#{movie_id}/videos"
+
+movies_list_1 = URI.open(url_top_rated).read
+top_rated_movies = JSON.parse(movies_list_1)["results"]
+i = 0
+
+20.times do
+  top_rated_movies[i]
+  Movie.create(title:top_rated_movies[i]["title"], category:, year: , synopsis:top_rated_movies[i]["overview"], poster: )
+  i += 1
+end
+
+movies_list_2 = URI.open(url_top_rated).read
+upcoming_movies = JSON.parse(movies_list_2)
+
+movies_list_3 = URI.open(url_popular).read
+popular_movies = JSON.parse(movies_list_3)
+
+movies_list_4 = URI.open(url_discover).read
+discover_movies = JSON.parse(movies_list_4)
+
+
 Notification.destroy_all
 SaveItem.destroy_all
 User.destroy_all
