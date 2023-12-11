@@ -19,11 +19,11 @@ class MoviesController < ApplicationController
   def show
     # As we will get info on movies from the API, we may need to change the code below
     @movie = Movie.find(params[:api_id])
-    @current_save_item = SaveItem.where(user: current_user, api_movie_id: @movie.id).first
+    @current_save_item = @movie.save_items.find_by(user: current_user)
     @save_item = SaveItem.new
 
 
-    @actor_list= ""
+    @actor_list = ""
     @movie.actors.each do |actor|
       if @actor_list == ""
         @actor_list+= "#{actor.first_name} #{actor.last_name}"
