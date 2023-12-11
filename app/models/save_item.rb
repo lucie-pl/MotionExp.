@@ -2,6 +2,7 @@ class SaveItem < ApplicationRecord
   belongs_to :user
   has_many :notifications
   belongs_to :movie, foreign_key: "api_movie_id"
+  has_many :screening_times, through: :movie
 
   validates :api_movie_id, uniqueness: { scope: :user_id }
   validates :title, presence: true
