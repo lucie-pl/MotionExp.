@@ -6,15 +6,15 @@
       <div class="movie_cards">
           <% if @movies.any? %>
             <% @movies.each do |movie| %>
-        <div class="movie_card justify-content-center">
-        <div class="movie_poster">
-          <%= link_to image_tag(movie.poster, size: "150x200"), movie_path(movie) %>
-        </div>
-              <div class="movie_card-body text-center">
-                <h6 class="card-title"><%= movie.title.upcase %></h6>
-                <p><%= movie.year %></p>
+              <div class="movie_card justify-content-center">
+                <div class="movie_poster">
+                  <%= link_to image_tag(movie.poster, size: "150x200"), movie_path(movie) %>
+                </div>
+                <div class="movie_card-body text-center">
+                  <h6 class="card-title"><%= movie.title.upcase.truncate(14) %></h6>
+                  <p><%= movie.year %></p>
+                </div>
               </div>
-        </div>
             <% end %>
           <% else %>
             <em>Sorry, no movies found.</em>
