@@ -10,7 +10,7 @@
   border-radius: 5px;
   margin-left: 5px;
   margin-right: 5px;
-  width: 340px;
+  // width: 340px;
   height: 35px;
 
   .icon {
@@ -24,7 +24,7 @@
   .search_form input {
     outline: none;
     border: none;
-    width: 310px;
+    width: 100%;
     // background-color: transparent;
   }
   .search_form input:focus {
@@ -39,25 +39,23 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 8px;
-  justify-items: center;
+  justify-items: stretch;
 }
 
 .movie_card {
-  width: 150px;
-  height: 250px;
+  // height: 250px;
   background-color: #4F4F4F;
   // border: 2px solid grey;
-  box-shadow: 0 0 1px;
   margin-bottom: 8px;
 
-  .movie_poster {
+  .movie_poster img {
     object-fit: cover;
     margin-bottom: 2px;
+    box-shadow: 0 0 1px #d5c3c3 ;
   }
 
   .movie_card-body {
-    width: 150px;
-    height: 30px;
+    // height: 30px;
     font-family: "Inter", sans-serif;
     font-size: 15px;
 
@@ -66,6 +64,13 @@
   .movie_card-body p {
     font-size: 13px;
     font-style: italic;
+    margin-bottom: 0px;
+  }
+
+  .movie_card-body h6 {
+    margin-bottom: 2px;
+    margin-top: 2px;
+
   }
 }
 .details_link {

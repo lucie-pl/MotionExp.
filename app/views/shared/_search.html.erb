@@ -1,11 +1,11 @@
 <div class="div mb-4">
-  <div class="row justify-content-center">
+  <div class="row justify-content-center pt-0 mx-0">
     <div class="search col-sm-8 my-3">
       <div class="icon text-center">
         <i class="fa-solid fa-magnifying-glass"></i>
       </div>
 
-      <%= form_with url: path, method: :get, class: "d-flex search_form" do %>
+      <%= form_with url: path, method: :get, class: "d-flex flex-grow-1 search_form" do %>
         <%= text_field_tag :query,
               params[:query],
               class: "form-control",
