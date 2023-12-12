@@ -109,11 +109,11 @@
 
   <div class="modal fade" id="menuModal" tabindex="-1" aria-labelledby="buttonLabel" aria-hidden="true">
     <div class="modal-dialog modal-bottom">
-      <div class="modal-content animate-bottom">
+      <div class="modal-content animate-bottom" data-controller="pop-up">
 
 
           <% if @current_save_item %>
-            <div class="modal-body">
+            <div  class="modal-body">
               <div id="modal-watchlist-history">
                 <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: false, action: "Add to watchlist", marked: false %>
                 <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: true, action: "Add to history", marked: false %>
