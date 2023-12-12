@@ -75,7 +75,6 @@ woman_talking = Movie.create(title: "Women Talking", category: "Drama", year: 20
 goddess_of_fireflies = Movie.create(title: "Goddess of the Fireflies", category: "Drama", year: 2020, synopsis: "A coming of age story set against the backdrop of a rural Québec town and grunge music's rise.", poster: "https://www.themoviedb.org/t/p/w1280/5HBRj2PjVG13y1TdZLs3mfaPnpD.jpg", directors: "Anaïs Barbeau-Lavalette", actors: "Kelly Depeault, Caroline Néron")
 
 
-
 first_save_item = SaveItem.create(user: User.first, history: false, marked: false, title: inception.title, year: inception.title, api_movie_id: inception.id, poster: inception.poster)
 second_save_item = SaveItem.create(user: User.first, history: true, marked: false, title: the_departed.title, year: the_departed.year, api_movie_id: the_departed.id, poster: the_departed.poster)
 
