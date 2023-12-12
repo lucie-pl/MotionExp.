@@ -14,42 +14,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_174350) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "actors", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "cinemas", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "directors", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "movie_actors", force: :cascade do |t|
-    t.bigint "movie_id", null: false
-    t.bigint "actor_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["actor_id"], name: "index_movie_actors_on_actor_id"
-    t.index ["movie_id"], name: "index_movie_actors_on_movie_id"
-  end
-
-  create_table "movie_directors", force: :cascade do |t|
-    t.bigint "movie_id", null: false
-    t.bigint "director_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["director_id"], name: "index_movie_directors_on_director_id"
-    t.index ["movie_id"], name: "index_movie_directors_on_movie_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -118,10 +86,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_174350) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "movie_actors", "actors"
-  add_foreign_key "movie_actors", "movies"
-  add_foreign_key "movie_directors", "directors"
-  add_foreign_key "movie_directors", "movies"
   add_foreign_key "notifications", "save_items"
   add_foreign_key "notifications", "users"
   add_foreign_key "save_items", "movies", column: "api_movie_id"

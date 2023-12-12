@@ -3,7 +3,9 @@
 
   <%# Row 1 %>
   <div class="row text-center mt-5">
+    <% if current_user.present? %>
       <h1 class="fw-bold" id="welcome">Welcome <%= current_user.first_name %> !</h1>
+    <% end %>
   </div>
 
   <%# Row 2 - Among your friends' WL %>

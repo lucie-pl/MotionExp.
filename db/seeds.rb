@@ -11,28 +11,10 @@
 Notification.destroy_all
 SaveItem.destroy_all
 User.destroy_all
-# MovieDirector.destroy_all
-# MovieActor.destroy_all
-# Actor.destroy_all
-# Director.destroy_all
 Movie.destroy_all
 
 User.create(first_name: "Lucie", last_name: "Plantier", username: "Lucie", email: "lucie_p@gmail.com", password: "123456")
 # User.create(first_name: "Hongri", last_name: "Ma", username: "Hongri", email: "hongri_m@gmail.com", password: "123456")
-
-# dicaprio = Actor.create(first_name: "Leonardo", last_name: "DiCaprio")
-# matt_demon = Actor.create(first_name: "Matt", last_name: "Demon")
-# de_niro = Actor.create(first_name: "Robert", last_name: "De Niro")
-# mc_conaughey = Actor.create(first_name: "Matthew", last_name: "McConaughey")
-# anne_hathaway = Actor.create(first_name: "Anne", last_name: "Hathaway")
-# marion_cotillard = Actor.create(first_name: "Marion", last_name: "Cotillard")
-# jodie = Actor.create(first_name: "Jodie", last_name: "Foster")
-# travolta = Actor.create(first_name: "John", last_name: "Travolta")
-# thurman = Actor.create(first_name: "Uma", last_name: "Thurman")
-
-# scorsese = Director.create(first_name: "Martin", last_name: "Scorsese")
-# nolan = Director.create(first_name: "Christopher", last_name: "Nolan")
-# tarantino = Director.create(first_name: "Quentin", last_name: "Tarantino")
 
 the_departed = Movie.create(title: "The Departed", category: "Thriller", year: 2006, synopsis: "An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.", poster: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p162564_p_v8_ag.jpg", directors: "Martin Scorsese", actors: "Leonardo DiCaprio, Matt Damon, Jack Nicholson")
 shutter_island = Movie.create(title: "Shutter Island", category: "Thriller", year: 2010, synopsis: "Teddy Daniels and Chuck Aule, two US marshals, are sent to an asylum on a remote island in order to investigate the disappearance of a patient, where Teddy uncovers a shocking truth about the place.", poster: "https://m.media-amazon.com/images/M/MV5BYzhiNDkyNzktNTZmYS00ZTBkLTk2MDAtM2U0YjU1MzgxZjgzXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", directors: "Martin Scorsese", actors: "Leonardo DiCaprio, Emily Mortimer, Mark Ruffalo")
@@ -91,31 +73,6 @@ a_brothers_love = Movie.create(title: "A Brother's Love", category: "Comedy", ye
 my_neighbor_totoro = Movie.create(title: "My Neighbor Totoro", category: "Animation", year: 1988, synopsis: "When two girls move to the country to be near their ailing mother, they have adventures with the wondrous forest spirits who live nearby.", poster: "https://www.themoviedb.org/t/p/w1280/rtGDOeG9LzoerkDGZF9dnVeLppL.jpg", directors: "Hayao Miyazaki", actors: "Hitoshi Takagi, Noriko Hidaka, Chika Sakamoto")
 
 
-
-
-
-
-
-
-
-# MovieDirector.create(movie: the_departed, director: scorsese)
-# MovieDirector.create(movie: shutter_island, director: scorsese)
-# MovieDirector.create(movie: inception, director: nolan)
-# MovieDirector.create(movie: taxi_driver, director: scorsese)
-# MovieDirector.create(movie: interstellar, director: nolan)
-# MovieDirector.create(movie: pulp_fiction, director: tarantino)
-
-# MovieActor.create(movie: the_departed, actor: dicaprio)
-# MovieActor.create(movie: the_departed, actor: matt_demon)
-# MovieActor.create(movie: shutter_island, actor: dicaprio)
-# MovieActor.create(movie: inception, actor: dicaprio)
-# MovieActor.create(movie: inception, actor: marion_cotillard)
-# MovieActor.create(movie: taxi_driver, actor: de_niro)
-# MovieActor.create(movie: taxi_driver, actor: jodie)
-# MovieActor.create(movie: interstellar, actor: mc_conaughey)
-# MovieActor.create(movie: interstellar, actor: anne_hathaway)
-# MovieActor.create(movie: pulp_fiction, actor: travolta)
-# MovieActor.create(movie: pulp_fiction, actor: thurman)
 
 first_save_item = SaveItem.create(user: User.first, history: false, marked: false, title: inception.title, year: inception.title, api_movie_id: inception.id, poster: inception.poster)
 second_save_item = SaveItem.create(user: User.first, history: true, marked: false, title: the_departed.title, year: the_departed.year, api_movie_id: the_departed.id, poster: the_departed.poster)
