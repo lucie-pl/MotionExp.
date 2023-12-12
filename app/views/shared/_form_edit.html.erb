@@ -1,6 +1,7 @@
 <%= simple_form_for(save_item) do |f| %>
   <%= f.input :history, as: :hidden, input_html: { value: history } %>
 
+
   <% if action == "Add to watchlist" %>
     <div id="modal-button">
       <%#= f.submit "Add to watchlist", class: "btn btn-primary", id: "add_watchlist"%>
@@ -18,7 +19,7 @@
     <div id="modal-button">
       <%= f.input :marked, as: :hidden, input_html: { value: marked } %>
       <%#= f.submit "Get notifications", class: "btn btn-warning", id: "get_notifications" %>
-      <button class="popup-button" type="submit"><i class="fa-solid fa-ticket fa-2x <%= save_item.marked ? "btn-add-to-notifications" : "btn-add-to-notifications-active" %>"></i></button>
+      <button class="popup-button" type="submit"><i class="fa-solid fa-ticket fa-2x <%= save_item.marked ? "btn-add-to-notifications-active" : "btn-add-to-notifications" %>"></i></button>
       <p class="text">Get notified when in cinemas</p>
     </div>
 

@@ -38,7 +38,7 @@
  .movie_cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 8px;
+  grid-gap: 15px;
   justify-items: stretch;
 }
 
@@ -46,11 +46,11 @@
   // height: 250px;
   background-color: #4F4F4F;
   // border: 2px solid grey;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 
   .movie_poster img {
     object-fit: cover;
-    margin-bottom: 2px;
+    margin-bottom: 0px;
     box-shadow: 0 0 1px #d5c3c3 ;
   }
 

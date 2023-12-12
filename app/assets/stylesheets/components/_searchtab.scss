@@ -44,7 +44,7 @@
   .movie_lists {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 8px;
+    grid-gap: 4px;
     justify-items: center;
 
     .movie_list {
