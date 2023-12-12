@@ -10,10 +10,6 @@
                 <div class="movie_poster flex-grow-1 flex-shrink-1">
                   <%= link_to image_tag(movie.poster, class: "w-100 movie-poster", height: 230), movie_path(movie), class: "d-block" %>
                 </div>
-                <div class="movie_card-body text-center flex-shrink-0">
-                  <h6><%= movie.title.upcase.truncate(14) %></h6>
-                  <p><%= movie.year %></p>
-                </div>
               </div>
             <% end %>
           <% else %>

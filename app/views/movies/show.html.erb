@@ -123,7 +123,11 @@
               <div id="separation"></div>
 
               <div id="modal-notif">
-                <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: @current_save_item.history, action: "Get notifications", marked: true %>
+                <% if @current_save_item.marked == false %>
+                  <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: @current_save_item.history, action: "Get notifications", marked: true %>
+                <% else %>
+                  <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: @current_save_item.history, action: "Get notifications", marked: false %>
+                <% end %>
               </div>
 
               <div id="separation"></div>
