@@ -14,11 +14,11 @@
 
     <div id="movie-infos" class="col-8">
 
-      <h3 class="movie-title"><%= @movie.title.upcase.truncate(20) %></h3>
+      <h3 class="movie-title"><%= @movie.title.upcase.truncate(18) %></h3>
 
         <ul class="no-bullets spacing">
           <div class="movie-d-y">
-            <div class="movie-directors">
+            <div id="director-name">
               <%= @movie.directors %>
             <%# @movie.directors.each do |director| %>
                 <%# <p id="director-name"><%= director.first_name = director.last_name</p>  %>
@@ -26,7 +26,9 @@
             </div>
             <p id="year-category"><%= @movie.year %> • <%= @movie.category %></p>
           </div>
-          <%= @movie.actors %>
+          <div id="casting">
+            <%= @movie.actors.truncate(30) %>
+          </div>
           <!-- <p id="casting"><%= @actor_list %></p> -->
         </ul>
 
@@ -55,25 +57,40 @@
       </div>
     </div>
 
-    <div class="screening-infos">
-      <%# if @screenings.present? %>
-        <%# @screenings.each do |screening| %>
-          <div>
-            <h5>Cinéma du Parc</h5> <!-- Enter code with cinema name -->
-
+    <div>
+      <% @movie.cinemas.distinct.each do |cinema| %>
+        <ul class="screening-infos">
+          <li>
+            <i class="fa-solid fa-location-dot align-self-center ps-2 pe-1" style="color: #000000;"></i>
+            <%= cinema.name %>
             <div class="screening-time">
-              <p>Friday, December 15, (English subtitles)</p> <!-- Enter date time + version -->
-              <div>
-                <ul class="time">
-                  <li class="box">4:00PM</li>
-                  <li class="box">6:00PM</li>
-                  <li class="box">8:00PM</li>
-                </ul>
-              </div>
+              <% temporary_screening = "" %>
+              <% cinema.screening_times.where(movie: @movie).each do |screening| %>
+
+                <% if temporary_screening != screening.date %>
+                  <% if temporary_screening != "" %>
+                    </div>
+                    <div class="screening-time">
+                  <% end %>
+
+                  <div class="date-version">
+                    <i class="fa-regular fa-calendar align-self-center pe-1"></i>
+                    <%= screening.date %> - <%= screening.version %>
+                  </div>
+
+                <% end %>
+
+                <% temporary_screening = screening.date %>
+
+                <div class="box">
+                  <%= screening.hour %>
+                </div>
+              <% end %>
             </div>
-          </div>
-        <%# end %>
-      <%# end %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
     </div>
   </div>
 
@@ -106,7 +123,11 @@
               <div id="separation"></div>
 
               <div id="modal-notif">
-                <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: @current_save_item.history, action: "Get notifications", marked: true %>
+                <% if @current_save_item.marked == false %>
+                  <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: @current_save_item.history, action: "Get notifications", marked: true %>
+                <% else %>
+                  <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: @current_save_item.history, action: "Get notifications", marked: false %>
+                <% end %>
               </div>
 
               <div id="separation"></div>
