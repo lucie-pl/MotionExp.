@@ -21,7 +21,7 @@ ul.no-bullets {
 .movie-title {
  font-family: 'Passion One', sans-serif;
  font-size: 30px;
- margin-bottom: 2px;
+ margin-bottom: 1px;
 }
 
 #director-name {
@@ -39,7 +39,7 @@ ul.no-bullets {
 
 #casting {
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 1px;
 }
 
@@ -86,7 +86,7 @@ ul.no-bullets {
   border-radius: 3px;
   position: absolute;
   right: 10px;
-  top: 0px;
+  top: 3px;
 }
 
 .ratings {
@@ -113,6 +113,8 @@ ul.no-bullets {
   margin: 4px;
   border-radius: 4px;
   color: black;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .screening-time {
@@ -124,14 +126,18 @@ ul.no-bullets {
   margin: 8px;
   font-family: 'Inter', sans-serif;
   font-size: 13px;
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.time {
+.date-version {
   display: flex;
   list-style: none;
   justify-content: center;
   padding-left: 0px;
+  width: 100%;
+  padding-bottom: 10px;
 }
 
 .box {
@@ -142,4 +148,7 @@ ul.no-bullets {
   margin-right: 12px;
   font-weight: 700;
   color: white;
+  display: flex;
+  list-style: none;
+  justify-content: center;
 }

@@ -21,6 +21,7 @@ class MoviesController < ApplicationController
     @save_item = SaveItem.new
 
 
+
     # @actor_list = ""
     # @movie.actors.each do |actor|
     #   if @actor_list == ""
