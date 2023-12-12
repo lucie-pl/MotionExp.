@@ -32,12 +32,12 @@
 
         <% if @current_save_item %>
           <div class="ratings">
-                <%# <i class="fa fa-star "></i>
-                <i class="fa fa-star "></i>
-                <i class="fa fa-star "></i>
-                <i class="fa fa-star "></i>
-                <i class="fa fa-star rating-color"></i> %>
-                <%=  @current_save_item.rating %>
+             <%@current_save_item.rating.times do %>
+               <i class="fa-solid fa-star" style="color:white"></i>
+             <% end %>
+             <%(5-@current_save_item.rating).times do %>
+               <i class="fa fa-star" style="color:#4F4F4F"></i>
+             <% end %>
           </div>
         <% end %>
 
