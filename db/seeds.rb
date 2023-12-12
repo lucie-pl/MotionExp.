@@ -73,7 +73,6 @@ a_brothers_love = Movie.create(title: "A Brother's Love", category: "Comedy", ye
 my_neighbor_totoro = Movie.create(title: "My Neighbor Totoro", category: "Animation", year: 1988, synopsis: "When two girls move to the country to be near their ailing mother, they have adventures with the wondrous forest spirits who live nearby.", poster: "https://www.themoviedb.org/t/p/w1280/rtGDOeG9LzoerkDGZF9dnVeLppL.jpg", directors: "Hayao Miyazaki", actors: "Hitoshi Takagi, Noriko Hidaka, Chika Sakamoto")
 
 
-
 first_save_item = SaveItem.create(user: User.first, history: false, marked: false, title: inception.title, year: inception.title, api_movie_id: inception.id, poster: inception.poster)
 second_save_item = SaveItem.create(user: User.first, history: true, marked: false, title: the_departed.title, year: the_departed.year, api_movie_id: the_departed.id, poster: the_departed.poster)
 
