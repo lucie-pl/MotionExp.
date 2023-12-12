@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
     @friendship = Friendship.find(params[:friendship_id])
     @message = Message.new(message_params)
     raise
-    # @message.friendship = @friendship.second_user
+    @message.friendship = @friendship
     @message.user = current_user
     if @message.save
       redirect_to friendship_path(@friendship)
