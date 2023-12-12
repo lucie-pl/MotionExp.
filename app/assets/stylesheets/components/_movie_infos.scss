@@ -22,6 +22,11 @@ ul.no-bullets {
  font-family: 'Passion One', sans-serif;
  font-size: 30px;
  margin-bottom: 1px;
+ padding-right: 30px;
+ display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
 }
 
 #director-name {
@@ -66,7 +71,7 @@ ul.no-bullets {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 100%;
+  flex-grow: 1;
 }
 
 .movie-d-y {
