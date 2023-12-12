@@ -23,13 +23,13 @@ class MoviesController < ApplicationController
     @save_item = SaveItem.new
 
 
-    @actor_list = ""
-    @movie.actors.each do |actor|
-      if @actor_list == ""
-        @actor_list+= "#{actor.first_name} #{actor.last_name}"
-      else
-        @actor_list+= ", #{actor.first_name} #{actor.last_name}"
-      end
-    end
+    # @actor_list = ""
+    # @movie.actors.each do |actor|
+    #   if @actor_list == ""
+    #     @actor_list+= "#{actor.first_name} #{actor.last_name}"
+    #   else
+    #     @actor_list+= ", #{actor.first_name} #{actor.last_name}"
+    #   end
+    # end
   end
 end
