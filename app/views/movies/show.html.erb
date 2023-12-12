@@ -19,13 +19,15 @@
         <ul class="no-bullets spacing">
           <div class="movie-d-y">
             <div class="movie-directors">
-            <% @movie.directors.each do |director| %>
-                <p id="director-name"><%= director.first_name%> <%= director.last_name%></p id="director-name">
-            <% end %>
+              <%= @movie.directors %>
+            <%# @movie.directors.each do |director| %>
+                <%# <p id="director-name"><%= director.first_name = director.last_name</p>  %>
+            <%# end %>
             </div>
             <p id="year-category"><%= @movie.year %> • <%= @movie.category %></p>
           </div>
-          <p id="casting"><%= @actor_list %></p>
+          <%= @movie.actors %>
+          <!-- <p id="casting"><%= @actor_list %></p> -->
         </ul>
 
         <% if @current_save_item %>

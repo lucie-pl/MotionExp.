@@ -7,12 +7,10 @@ class MoviesController < ApplicationController
       sql_subquery = <<~SQL
         movies.title ILIKE :query
         OR movies.category ILIKE :query
-        OR directors.first_name ILIKE :query
-        OR directors.last_name ILIKE :query
-        OR actors.first_name ILIKE :query
-        OR actors.last_name ILIKE :query
+        OR movies.directors ILIKE :query
+        OR movies.actors ILIKE :query
       SQL
-      @movies = @movies.joins(:directors).joins(:actors).where(sql_subquery, query: "%#{params[:query]}%").distinct
+      @movies = @movies.where(sql_subquery, query: "%#{params[:query]}%")
     end
   end
 
@@ -23,13 +21,13 @@ class MoviesController < ApplicationController
     @save_item = SaveItem.new
 
 
-    @actor_list = ""
-    @movie.actors.each do |actor|
-      if @actor_list == ""
-        @actor_list+= "#{actor.first_name} #{actor.last_name}"
-      else
-        @actor_list+= ", #{actor.first_name} #{actor.last_name}"
-      end
-    end
+    # @actor_list = ""
+    # @movie.actors.each do |actor|
+    #   if @actor_list == ""
+    #     @actor_list+= "#{actor.first_name} #{actor.last_name}"
+    #   else
+    #     @actor_list+= ", #{actor.first_name} #{actor.last_name}"
+    #   end
+    # end
   end
 end
