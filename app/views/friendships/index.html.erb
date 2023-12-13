@@ -1,0 +1,4 @@
+<% @friendships.each do |friendship| %>
+<% name_to_display = friendship.first_user == current_user ? friendship.second_user.first_name : friendship.first_user.first_name %>
+  <%= link_to name_to_display,  friendship_path(friendship) %>
+<% end %>

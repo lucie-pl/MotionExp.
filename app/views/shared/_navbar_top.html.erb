@@ -11,7 +11,7 @@
       <li class="nav-item dropdown" style="list-style-type: none;margin: 0;padding: 0;">
             <%= image_tag "lucie.png", class: "avatar", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Chat", "#", class: "dropdown-item" %>
+              <%= link_to "Chat", friendships_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>

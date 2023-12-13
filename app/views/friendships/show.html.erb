@@ -1,16 +1,15 @@
-<h1>hello for testing</h1>
 
 <div class="container friendship" data-controller="friendship-subscription"
   data-friendship-subscription-friendship-id-value="<%= @friendship.id %>">
-
+<h1>Chat</h1>
   <div class="messages" data-friendship-subscription-target="messages">
     <% @friendship.messages.each do |message| %>
       <%= render "messages/message", message: message %>
     <% end %>
   </div>
-</div>
+
 <%= simple_form_for [@friendship, @message],
-  html: {class: "d-flex"} do |f|
+  html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" }  do |f|
 %>
   <%= f.input :content,
     label: false,
@@ -19,3 +18,4 @@
   %>
   <%= f.submit "Send", class: "btn btn-primary mb-3" %>
 <% end %>
+</div>
