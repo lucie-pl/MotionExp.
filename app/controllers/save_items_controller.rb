@@ -19,7 +19,7 @@ class SaveItemsController < ApplicationController
     @save_item.user = current_user
 
     if @save_item.save
-      redirect_to movie_path(params[:movie_api_id])
+      redirect_to movie_path(params[:movie_api_id], popup: true)
     else
       @movie = Movie.find(params[:movie_api_id])
       render "movies/show", status: :unprocessable_entity

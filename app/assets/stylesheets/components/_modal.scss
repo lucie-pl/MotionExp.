@@ -22,7 +22,7 @@
 #separation {
   border: dotted 1px white;
   margin-top: 4px;
-  margin-bottom: -7px;
+  // margin-bottom: -7px;
 }
 
 @keyframes animatebottom {
@@ -45,6 +45,7 @@
 #modal-notif {
   display: flex;
   justify-content: center;
+  margin-top: 16px;
 }
 
 #modal-button {
