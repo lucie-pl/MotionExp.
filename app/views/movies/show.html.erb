@@ -118,36 +118,55 @@
 
   <div class="modal fade" id="menuModal" tabindex="-1" aria-labelledby="buttonLabel" aria-hidden="true">
     <div class="modal-dialog modal-bottom">
-      <div class="modal-content animate-bottom">
-
+      <div class="modal-content animate-bottom" data-controller="pop-up" data-pop-up-movie-id-value="<%=@movie.id %>">
 
           <% if @current_save_item %>
-            <div class="modal-body">
+
+            <div  class="modal-body">
+
               <div id="modal-watchlist-history">
-                <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: false, action: "Add to watchlist", marked: false %>
-                <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: true, action: "Add to history", marked: false %>
+
+                <div id="modal-button" data-pop-up-target="watchlistButton">
+                  <button class= "popup-button" data-action="click->pop-up#add_watchlist"><i class="fa-regular fa-eye fa-2x <%= !@current_save_item.history ? "btn-add-to-watchlist-active" : "btn-add-to-watchlist" %>"></i></button>
+                  <p class="text">Add to watchlist</p>
+                </div>
+
+                <div id="modal-button" data-pop-up-target="historyButton">
+                  <button class="popup-button" data-action="click->pop-up#add_history"><i class="fa-regular fa-clock fa-2x <%= @current_save_item.history ? "btn-add-to-history-active" : "btn-add-to-history" %>"></i></button>
+                  <p class="text">Add to history list</p>
+                </div>
+
               </div>
-              <%# <%= link_to "Get notified when in cinemas" , save_item_path(@current_save_item), data: { "turbo-method": :patch } %>
 
               <div id="separation"></div>
 
-              <div id="modal-notif">
-                <% if @current_save_item.marked == false %>
-                  <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: @current_save_item.history, action: "Get notifications", marked: true %>
-                <% else %>
-                  <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: @current_save_item.history, action: "Get notifications", marked: false %>
+              <div id="modal-notif" data-pop-up-target="cinemaNotifications">
+                <div id="modal-button">
+                  <button class="popup-button" data-action="click->pop-up#cinema_notifications"><i class="fa-solid fa-ticket fa-2x <%= @current_save_item.marked ? "btn-add-to-notifications-active" : "btn-add-to-notifications" %>"></i></button>
+                  <p class="text">Get notified when in cinemas</p>
+                </div>
+              </div>
+
+              <div id="separation"></div>
+
+              <%# <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: @current_save_item.history, action: "Rate the movie", marked: @current_save_item.marked %>
+
+              <div id = "rating-section">
+                <%= simple_form_for(@current_save_item) do |f| %>
+                  <%= f.input :rating, collection: (0..5).to_a, input_html: {data: {controller: "star-rating"}} %>
+                  <%= f.submit "Rate the movie", class: "btn", id: "rate_movie" %>
                 <% end %>
               </div>
 
-              <div id="separation"></div>
-
-              <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: @current_save_item.history, action: "Rate the movie", marked: @current_save_item.marked %>
             </div>
+
           <% else %>
+
             <div class="modal-body modal-new">
               <%= render "shared/form", movie: @movie, save_item: @save_item, history: false %>
               <%= render "shared/form", movie: @movie, save_item: @save_item, history: true %>
             </div>
+
           <% end %>
 
       </div>

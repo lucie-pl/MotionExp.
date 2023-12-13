@@ -1,7 +1,7 @@
 class SaveItemsController < ApplicationController
 
   def index
-    save_items = SaveItem.all
+    save_items = SaveItem.order(updated_at: :desc).all
     # save_items = SaveItem.where(user: current_user)
     @history_items = save_items.select { |save_item| save_item.history }
     @watchlist_items = save_items.reject { |save_item| save_item.history }
@@ -19,7 +19,7 @@ class SaveItemsController < ApplicationController
     @save_item.user = current_user
 
     if @save_item.save
-      redirect_to movie_path(params[:movie_api_id])
+      redirect_to movie_path(params[:movie_api_id], popup: true)
     else
       @movie = Movie.find(params[:movie_api_id])
       render "movies/show", status: :unprocessable_entity

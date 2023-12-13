@@ -20,6 +20,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  # routes for pop-up ajax request
+  post "movies/:movie_id/add_watchlist", to: "movies#add_watchlist"
+  post "movies/:movie_id/add_history", to: "movies#add_history"
+  post "movies/:movie_id/cinema_notifications", to: "movies#cinema_notifications"
+
+  # routes for chat
   resources :friendships, only: :show do
     resources :messages, only: :create
   end
