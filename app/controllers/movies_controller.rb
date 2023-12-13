@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
 
+  # to avoid giving a token to the form - not best practice
   skip_before_action :verify_authenticity_token
 
   def index
