@@ -1,10 +1,5 @@
-<%# @friendships.each do |friendship| %>
-<%# name_to_display = friendship.first_user == current_user ? friendship.second_user.first_name : friendship.first_user.first_name %>
-  <%#= link_to name_to_display,  friendship_path(friendship) %>
-<%#end %>
-
-<div class="container">
-  <h1>My friends</h1>
+<div class="container friend_list">
+  <h2>My friends</h2>
     <ul class="list-group list-group-flush">
       <% @friendships.each do |friendship| %>
         <% name_to_display = friendship.first_user == current_user ? friendship.second_user.first_name : friendship.first_user.first_name %>
