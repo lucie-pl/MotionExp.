@@ -2,7 +2,6 @@ class MessagesController < ApplicationController
   def create
     @friendship = Friendship.find(params[:friendship_id])
     @message = Message.new(message_params)
-    raise
     @message.friendship = @friendship
     @message.user = current_user
     if @message.save
