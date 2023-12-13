@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_12_201633) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_13_215503) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,6 +59,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_12_201633) do
     t.bigint "save_item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "seen", default: false, null: false
     t.index ["save_item_id"], name: "index_notifications_on_save_item_id"
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
