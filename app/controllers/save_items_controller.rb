@@ -1,7 +1,7 @@
 class SaveItemsController < ApplicationController
 
   def index
-    save_items = SaveItem.all
+    save_items = SaveItem.order(updated_at: :desc).all
     # save_items = SaveItem.where(user: current_user)
     @history_items = save_items.select { |save_item| save_item.history }
     @watchlist_items = save_items.reject { |save_item| save_item.history }

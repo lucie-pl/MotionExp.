@@ -90,3 +90,27 @@
 .btn-add-to-notifications-active {
   color: #ef476f;
 }
+
+[data-star-rating] .gl-star-rating--stars[aria-label]::after,
+[data-star-rating] .gl-star-rating--stars[aria-label]::before{
+  display: none;
+}
+
+.save_item_rating label {
+  display: none;
+}
+
+.save_item_rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --gl-star-size: 36px;
+}
+
+#rating-section form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+}

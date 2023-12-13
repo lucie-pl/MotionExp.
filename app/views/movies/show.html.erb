@@ -140,7 +140,14 @@
 
               <div id="separation"></div>
 
-              <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: @current_save_item.history, action: "Rate the movie", marked: @current_save_item.marked %>
+              <%# <%= render "shared/form_edit", movie: @movie, save_item: @current_save_item, history: @current_save_item.history, action: "Rate the movie", marked: @current_save_item.marked %>
+
+              <div id = "rating-section">
+                <%= simple_form_for(@current_save_item) do |f| %>
+                  <%= f.input :rating, collection: (0..5).to_a, input_html: {data: {controller: "star-rating"}} %>
+                  <%= f.submit "Rate the movie", class: "btn", id: "rate_movie" %>
+                <% end %>
+              </div>
 
             </div>
 
