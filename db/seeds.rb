@@ -19,7 +19,24 @@ Cinema.destroy_all
 
 User.create(first_name: "Lucie", last_name: "Plantier", username: "Lucie", email: "lucie_p@gmail.com", password: "123456")
 User.create(first_name: "Hongri", last_name: "Ma", username: "Hongri", email: "hongri_m@gmail.com", password: "123456")
+User.create(first_name: "Lorry", last_name: "Brossard", username: "Lorry", email: "lorry_B@gmail.com", password: "123456")
+User.create(first_name: "Marie", last_name: "Alex", username: "Marie", email: "marie_A@gmail.com", password: "123456")
+User.create(first_name: "Frederic", last_name: "Charest", username: "Frederic", email: "frederic_C@gmail.com", password: "123456")
+Paul = User.create(first_name: "Paul ", last_name: "Lanza", username: "Paul", email: "paul_l@gmail.com", password: "123456")
+Nadia = User.create(first_name: "Nadia ", last_name: "Auger", username: "Nadia", email: "nadia_A@gmail.com", password: "123456")
+User.create(first_name: "Romar ", last_name: "Romar", username: "Romar", email: "Romar_R@gmail.com", password: "123456")
+
+
+Friendship.create(first_user: User.first, second_user: User.second)
+Friendship.create(first_user: User.first, second_user: User.third)
+Friendship.create(first_user: User.first, second_user: User.fourth)
+Friendship.create(first_user: User.first, second_user: User.fifth)
+Friendship.create(first_user: User.first, second_user: Paul)
+Friendship.create(first_user: User.first, second_user: Nadia)
 Friendship.create(first_user: User.first, second_user: User.last)
+
+
+
 
 the_departed = Movie.create(title: "The Departed", category: "Thriller", year: 2006, synopsis: "An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.", poster: "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p162564_p_v8_ag.jpg", directors: "Martin Scorsese", actors: "Leonardo DiCaprio, Matt Damon", trailer_url: "https://youtu.be/ggs6Ip97vRU")
 the_creator = Movie.create(title: "The Creator", category: "Sci-Fi", year: 2023, synopsis: "Against the backdrop of a war between humans and robots with artificial intelligence, a former soldier finds the secret weapon, a robot in the form of a young child.", poster: "https://www.themoviedb.org/t/p/w1280/vBZ0qvaRxqEhZwl6LWmruJqWE8Z.jpg", directors: "Gareth Edwards", actors: "John David Washington, Madeleine Yuna Voyles", trailer_url: "https://youtu.be/MAZuGdi32bk")
