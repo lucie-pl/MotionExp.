@@ -74,7 +74,6 @@ annette = Movie.create(title: "Annette", category: "Musical", year: 2021, synops
 woman_talking = Movie.create(title: "Women Talking", category: "Drama", year: 2022, synopsis: "Do nothing, stay and fight, or leave. In 2010, the women of an isolated religious community grapple with reconciling a brutal reality with their faith.", poster: "https://www.themoviedb.org/t/p/w1280/twUbb6Irktv0VEsJXQWJ3VKyxFX.jpg", directors: "Sarah Polley", actors: "Rooney Mara, Claire Foy", trailer_url: "https://www.youtube.com/watch?v=pD0mFhMqDCE")
 goddess_of_fireflies = Movie.create(title: "Goddess of the Fireflies", category: "Drama", year: 2020, synopsis: "A coming of age story set against the backdrop of a rural Québec town and grunge music's rise.", poster: "https://www.themoviedb.org/t/p/w1280/5HBRj2PjVG13y1TdZLs3mfaPnpD.jpg", directors: "Anaïs Barbeau-Lavalette", actors: "Kelly Depeault, Caroline Néron", trailer_url: "https://www.youtube.com/watch?v=R0AQoPKzl2s")
 
-
 first_save_item = SaveItem.create(user: User.first, history: false, marked: false, title: inception.title, year: inception.title, api_movie_id: inception.id, poster: inception.poster)
 second_save_item = SaveItem.create(user: User.first, history: true, marked: false, title: the_departed.title, year: the_departed.year, api_movie_id: the_departed.id, poster: the_departed.poster)
 
