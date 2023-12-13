@@ -27,7 +27,7 @@
             <p id="year-category"><%= @movie.year %> • <%= @movie.category %></p>
           </div>
           <div id="casting">
-            <%= @movie.actors.truncate(30) %>
+            <%= @movie.actors %>
           </div>
           <!-- <p id="casting"><%= @actor_list %></p> -->
         </ul>
@@ -92,10 +92,11 @@
       <% end %>
     </div>
 
-    <div>
+    <div id="trailer">
       <iframe id="player" type="text/html" width="640" height="360"
-        src="http://www.youtube.com/embed/ggs6Ip97vRU?enablejsapi=1&origin=https://www.motionexp.me&wmode=opaque"
-        frameborder="0"></iframe>
+        src="http://www.youtube.com/embed/<%=@movie.trailer_url%>?enablejsapi=1&origin=https://www.motionexp.me"
+        frameborder="0">
+      </iframe>
     </div>
 
 

@@ -5,7 +5,11 @@ class MessagesController < ApplicationController
     @message.friendship = @friendship
     @message.user = current_user
     if @message.save
-      redirect_to friendship_path(@friendship)
+      FriendshipChannel.broadcast_to(
+        @friendship,
+        render_to_string(partial: "message", locals: { message: @message })
+      )
+      head :ok
     else
       render "friendships/show", status: :unprocessable_entity
     end

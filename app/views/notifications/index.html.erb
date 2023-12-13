@@ -8,7 +8,7 @@
     <ul class="notification">
     <% if @notifications.present? %>
       <% @notifications.each do |notification| %>
-      <li class="notification-card"><%= link_to notification.notif_title, movie_path(notification.save_item.api_movie_id) %></li>
+      <li class="notification-card"><%= link_to "#{notification.notif_title.upcase} #{notification.content}", movie_path(notification.save_item.api_movie_id) %></li>
       <% end %>
     <% else %>
       <p>You don't have any notifications yet.</p>
