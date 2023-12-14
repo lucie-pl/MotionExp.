@@ -4,7 +4,7 @@
   <title>The change you wanted was rejected (422)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
+  /* .rails-default-error-page {
     background-color: #EFEFEF;
     color: #2E2F30;
     text-align: center;
@@ -50,18 +50,54 @@
     border-top-color: #DADADA;
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  } */
+
+  body {
+    background-color: black;
+    color: white;
   }
+
+  h1 {
+    text-align: center;
+    font-size: 25px;
+  }
+
+  #top {
+    margin-top: 150px;
+    margin-bottom: 70px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 25px;
+  }
+
+  #link {
+    text-align: center;
+  }
+
   </style>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/422.html -->
   <div class="dialog">
-    <div>
+    <!-- <div>
       <h1>The change you wanted was rejected.</h1>
       <p>Maybe you tried to change something you didn't have access to.</p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+    <p>If you are the application owner check the logs for more information.</p> -->
+
+    <div id="top">
+      <img src="/images/MotionExp-logo2.png" alt="logo" width="350" height="75">
+      <h1>422 - Sorry, we don't find what you're looking for ! </h1>
+    </div>
+    <p>Please go back to the homepage </p>
+    <div id="link">
+      <a href="/"><i class="fa-solid fa-house fa-2xl" style="color: #FFFFFF;"></i></a>
+    </div>
+
   </div>
 </body>
 </html>

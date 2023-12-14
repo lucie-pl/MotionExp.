@@ -150,7 +150,3 @@ oppenheimer_2 = ScreeningTime.create(date: "Sunday, December 17", hour: "3:45PM"
 oppenheimer_3 = ScreeningTime.create(date: "Saturday, December 16", hour: "6:30PM", version: "English version", cinema_id: scotiabank.id, movie_id: oppenheimer.id)
 oppenheimer_4 = ScreeningTime.create(date: "Saturday, December 16", hour: "8:15PM", version: "English version", cinema_id: forum.id, movie_id: oppenheimer.id)
 oppenheimer_5 = ScreeningTime.create(date: "Sunday, December 17", hour: "6:30PM", version: "English subtitles", cinema_id: cinema_moderne.id, movie_id: oppenheimer.id)
-
-spiderman_accross_spiderverse_1 = ScreeningTime.create(date: "Saturday, December 16", hour: "11:15AM", version: "English version", cinema_id: scotiabank.id, movie_id: spiderman_accross_spiderverse.id)
-spiderman_accross_spiderverse_2 = ScreeningTime.create(date: "Saturday, December 16", hour: "3:15PM", version: "English version", cinema_id: scotiabank.id, movie_id: spiderman_accross_spiderverse.id)
-spiderman_accross_spiderverse_3 = ScreeningTime.create(date: "Saturday, December 16", hour: "6:45PM", version: "English version", cinema_id: scotiabank.id, movie_id: spiderman_accross_spiderverse.id)
