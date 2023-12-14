@@ -4,7 +4,7 @@ ul.notification {
   margin: 5px;
 }
 
-.notification-card {
+.notification-card-red {
   background-color: #AB2828;
   color: white;
   border-radius: 5px;
@@ -13,9 +13,35 @@ ul.notification {
   padding-bottom: 7px;
   padding-left: 14px;
   padding-right: 14px;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
-.notification-card a {
-  text-decoration: none;
-  color: white;
+.notification-card-gray {
+  background-color: #4F4F4F;
+  border-radius: 5px;
+  margin-top: 13px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 14px;
+  padding-right: 14px;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.previous {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+}
+
+.notification-no-bullet-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 5px;
 }
