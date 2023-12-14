@@ -7,7 +7,8 @@ class MessagesController < ApplicationController
     if @message.save
       FriendshipChannel.broadcast_to(
         @friendship,
-        render_to_string(partial: "message", locals: { message: @message })
+        message: render_to_string(partial: "message", locals: { message: @message }),
+        sender_id: @message.user.id
       )
       head :ok
     else
@@ -20,4 +21,5 @@ class MessagesController < ApplicationController
   def message_params
     params.require(:message).permit(:content)
   end
+
 end
