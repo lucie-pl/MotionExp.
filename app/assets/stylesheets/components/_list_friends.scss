@@ -1,10 +1,13 @@
 .friend_list {
    h2 {
+    margin-top: 30px;
+    margin-bottom: 30px;
     text-align: center;
   }
 
-  .list-group-flush {
+  .list-group-flush li {
     background-color: black;
+    margin-bottom: 5px;
 
   }
 
@@ -12,4 +15,7 @@
 
 .friend_list .list-group-flush .list-group-item a {
   color: white;
+  text-decoration: none;
+  font-size: 15px;
+
 }
