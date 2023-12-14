@@ -7,7 +7,7 @@
     <% end %>
 
     <%= link_to notifications_path do %>
-      <% if @unseen_notifications_count.positive? %>
+      <% if (!@unseen_notifications_count.nil? && @unseen_notifications_count.positive?) %>
         <i class="fa-solid fa-bell fa-lg" style="color: #FFFFFF;"></i>
         <p><%= @unseen_notifications_count %></p>
       <% else %>
