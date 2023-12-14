@@ -2,7 +2,7 @@
 <div class="container-fluid pt-1">
 
   <%# Row 1 %>
-  <div class="row text-center mt-5">
+  <div class="row text-center welcome-title">
     <% if current_user.present? %>
       <h1 class="fw-bold" id="welcome">Welcome <%= current_user.first_name %> !</h1>
     <% end %>
@@ -13,7 +13,7 @@
 
     <div class="fw-normal mb-1 pe-0 ps-0">
 
-      <p class="mb-0 subtitle">
+      <p class="subtitle">
         Among your friends' watchlists
       </p>
 
@@ -62,7 +62,7 @@
 
     <div class="fw-normal mb-1 pe-0 ps-0">
 
-      <p class="mb-0 subtitle">
+      <p class="subtitle">
         Upcoming films
       </p>
 

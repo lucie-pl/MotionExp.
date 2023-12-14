@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row text-center mt-5 mb-5">
-    <h2 class="fw-medium">Your notifications !</h2 class="fw-medium">
+    <h2 class="fw-medium">Your notifications</h2 class="fw-medium">
   </div>
 
 
@@ -8,14 +8,20 @@
     <ul class="notification">
     <% if @notifications.present? %>
       <% @notifications.each do |notification| %>
-      <li class="notification-card"><%= link_to "#{notification.notif_title.upcase} #{notification.content}", movie_path(notification.save_item.api_movie_id) %></li>
+      <li class="notification-card-red"><%= link_to "#{notification.notif_title.upcase} #{notification.content}", movie_path(notification.save_item.api_movie_id) %></li>
       <% end %>
     <% else %>
-      <p>You don't have any notifications yet.</p>
+      <%#<p>You don't have any notifications yet.</p>%>
       <br>
-      <p>Add films to your watchlist or history list and mark them to
-      be notifed when they are programmed in a cinema near you !</p>
+      <%#<p>Add films to your watchlist or history list and mark them to
+      be notifed when they are programmed in a cinema near you !</p>%>
     <% end %>
+    </ul>
+
+    <h6 class="previous mt-5 ps-2">Previous</h6>
+    <ul class="notification-no-bullet-list">
+      <li class="notification-card-gray">THE BOY AND THE HERON is programmed at Cinéma Beaubien and Cineplex Forum</li>
+      <li class="notification-card-gray">POOR THINGS is programmed at Cinéma du Parc and Scotiabank</li>
     </ul>
   </div>
 
