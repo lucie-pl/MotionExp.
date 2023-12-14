@@ -6,10 +6,10 @@
       <i class="fa-solid fa-house fa-lg" style="color: #FFFFFF;"></i>
     <% end %>
 
-    <%= link_to notifications_path do %>
+    <%= link_to notifications_path, class: "notif-position" do %>
       <% if (!@unseen_notifications_count.nil? && @unseen_notifications_count.positive?) %>
-        <i class="fa-solid fa-bell fa-lg" style="color: #FFFFFF;"></i>
-        <p><%= @unseen_notifications_count %></p>
+        <i class="fa-solid fa-bell fa-lg notif-position" style="color: #D02121;"></i>
+        <p class="notif-count rounded-circle"><%= @unseen_notifications_count %></p>
       <% else %>
         <i class="fa-solid fa-bell fa-lg" style="color: #FFFFFF;"></i>
       <% end %>
