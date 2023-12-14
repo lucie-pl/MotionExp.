@@ -1,21 +1,27 @@
 
-<div class="container friendship" data-controller="friendship-subscription"
-  data-friendship-subscription-friendship-id-value="<%= @friendship.id %>">
-<h1>Chat</h1>
+<div class="container friendship"
+  data-controller="friendship-subscription"
+  data-friendship-subscription-friendship-id-value="<%= @friendship.id %>"
+  data-friendship-subscription-current-user-id-value="<%= current_user.id %>">
+<h1>Chat with <%= @friendship.second_user.first_name %></h1>
   <div class="messages" data-friendship-subscription-target="messages">
     <% @friendship.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
+      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+        <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+          <%= render "messages/message", message: message %>
+        </div>
+      </div>
     <% end %>
   </div>
 
 <%= simple_form_for [@friendship, @message],
-  html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" }  do |f|
+  html: { data: { action: "turbo:submit-end->friendship-subscription#resetForm" }, class: "d-flex" }  do |f|
 %>
   <%= f.input :content,
     label: false,
     placeholder: "Messages",
     wrapper_html: {class: "flex-grow-1"}
   %>
-  <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+  <%#= f.submit "Send", class: "btn btn-primary mb-3" %>
 <% end %>
 </div>
