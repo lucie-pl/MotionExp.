@@ -221,6 +221,10 @@ GEM
     rake (13.1.0)
     rdoc (6.6.1)
       psych (>= 4.0.0)
+    redis (5.0.8)
+      redis-client (>= 0.17.0)
+    redis-client (0.19.0)
+      connection_pool
     regexp_parser (2.8.3)
     reline (0.4.1)
       io-console (~> 0.5)
@@ -278,7 +282,7 @@ GEM
     zeitwerk (2.6.12)
 
 PLATFORMS
-  x86_64-darwin-23
+  arm64-darwin-22
 
 DEPENDENCIES
   autoprefixer-rails
@@ -295,6 +299,7 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.2)
+  redis (>= 4.0.1)
   sassc-rails
   selenium-webdriver
   simple_form!
