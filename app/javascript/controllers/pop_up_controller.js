@@ -25,16 +25,22 @@ export default class extends Controller {
     .then((history) => {
       const iconWatchlist = this.watchlistButtonTarget.querySelector("i")
       const iconHistory = this.historyButtonTarget.querySelector("i")
+      const textWatchlist = this.watchlistButtonTarget.querySelector("p")
+      const textHistory = this.historyButtonTarget.querySelector("p")
       if (history) {
         iconWatchlist.classList.remove("btn-add-to-watchlist-active")
         iconWatchlist.classList.add("btn-add-to-watchlist")
         iconHistory.classList.add("btn-add-to-history-active")
         iconHistory.classList.remove("btn-add-to-history")
+        textWatchlist.innerText = "Move to watchlist"
+        textHistory.innerText = "In my history list"
       } else {
         iconWatchlist.classList.add("btn-add-to-watchlist-active")
         iconWatchlist.classList.remove("btn-add-to-watchlist")
         iconHistory.classList.remove("btn-add-to-history-active")
         iconHistory.classList.add("btn-add-to-history")
+        textWatchlist.innerText = "In my watchlist"
+        textHistory.innerText = "Move to history list"
       }
     })
   }
@@ -48,16 +54,22 @@ export default class extends Controller {
     .then((history) => {
       const iconHistory = this.historyButtonTarget.querySelector("i")
       const iconWatchlist = this.watchlistButtonTarget.querySelector("i")
+      const textWatchlist = this.watchlistButtonTarget.querySelector("p")
+      const textHistory = this.historyButtonTarget.querySelector("p")
       if (history) {
         iconHistory.classList.add("btn-add-to-history-active")
         iconHistory.classList.remove("btn-add-to-history")
         iconWatchlist.classList.remove("btn-add-to-watchlist-active")
         iconWatchlist.classList.add("btn-add-to-watchlist")
+        textWatchlist.innerText = "Move to watchlist"
+        textHistory.innerText = "In my history list"
       } else {
         iconHistory.classList.remove("btn-add-to-history-active")
         iconHistory.classList.add("btn-add-to-history")
         iconWatchlist.classList.add("btn-add-to-watchlist-active")
         iconWatchlist.classList.remove("btn-add-to-watchlist")
+        textWatchlist.innerText = "In my watchlist"
+        textHistory.innerText = "Move to history list"
       }
     })
   }

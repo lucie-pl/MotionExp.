@@ -124,16 +124,16 @@
 
             <div  class="modal-body">
 
-              <div id="modal-watchlist-history">
+              <div class="row" id="modal-watchlist-history">
 
-                <div id="modal-button" data-pop-up-target="watchlistButton">
+                <div class="col-6" id="modal-button" data-pop-up-target="watchlistButton">
                   <button class= "popup-button" data-action="click->pop-up#add_watchlist"><i class="fa-regular fa-eye fa-2x <%= !@current_save_item.history ? "btn-add-to-watchlist-active" : "btn-add-to-watchlist" %>"></i></button>
-                  <p class="text">Add to watchlist</p>
+                  <p class="text"><%= !@current_save_item.history ? "In my watchlist" : "Move to watchlist"%></p>
                 </div>
 
-                <div id="modal-button" data-pop-up-target="historyButton">
+                <div class="col-6" id="modal-button" data-pop-up-target="historyButton">
                   <button class="popup-button" data-action="click->pop-up#add_history"><i class="fa-regular fa-clock fa-2x <%= @current_save_item.history ? "btn-add-to-history-active" : "btn-add-to-history" %>"></i></button>
-                  <p class="text">Add to history list</p>
+                  <p class="text"><%= @current_save_item.history ? "In my history list" : "Move to history list"%></p>
                 </div>
 
               </div>
