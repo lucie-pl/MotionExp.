@@ -7,3 +7,21 @@
   opacity: 0.9;
   z-index: 111;
 }
+
+.notif-count {
+  background-color: #f6c501;
+  color: black;
+  height: 15px;
+  width: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -4px;
+  right: -13px;
+  font-size: 10px;
+}
+
+.notif-position {
+  position: relative
+}
