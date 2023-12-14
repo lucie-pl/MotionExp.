@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   post "movies/:movie_id/cinema_notifications", to: "movies#cinema_notifications"
 
   # routes for chat
-  resources :friendships, only: :show do
+  resources :friendships, only: [:show, :index] do
     resources :messages, only: :create
   end
 end
