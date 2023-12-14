@@ -7,7 +7,12 @@
     <% end %>
 
     <%= link_to notifications_path do %>
-      <i class="fa-solid fa-bell fa-lg" style="color: #FFFFFF;"></i>
+      <% if (!@unseen_notifications_count.nil? && @unseen_notifications_count.positive?) %>
+        <i class="fa-solid fa-bell fa-lg" style="color: #FFFFFF;"></i>
+        <p><%= @unseen_notifications_count %></p>
+      <% else %>
+        <i class="fa-solid fa-bell fa-lg" style="color: #FFFFFF;"></i>
+      <% end %>
     <% end %>
 
     <%= link_to my_movies_path do %>

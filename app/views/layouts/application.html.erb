@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MotionExp</title>
+    <%= favicon_link_tag 'favicon-white.png'%>
+    <title>MotionExp. - Be sure to experience cinema the right way!</title>
+    <meta name="description" content="Because there's nothing better than experiencing a movie in a cinemam, be sure to get all the informations you want about movies, and get notified when your favorites movies play in cinemas!">
+    <meta property="og:title" content="MotionExp.">
+    <meta property="og:site_name" content="motionexp.me">
+    <meta property="og:type" content="website">
+    <meta name="og:description" property="og:description" content="Because there's nothing better than experiencing a movie in a cinemam, be sure to get all the informations you want about movies, and get notified when your favorites movies play in cinemas!">
+    <meta name="og:url" property="og:url" content="https://www.motionexp.me">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://ga.jspm.io/npm:star-rating.js@4.3.0/dist/star-rating.css">
+    <meta name="turbo-cache-control" content="no-cache">
   </head>
 
   <body id="body">
