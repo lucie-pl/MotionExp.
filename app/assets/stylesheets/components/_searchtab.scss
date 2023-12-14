@@ -44,14 +44,16 @@
   .movie_lists {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 4px;
+    grid-gap: 3px;
     justify-items: center;
+    align-items: center;
 
     .movie_list {
-      width: 150px;
-      height: 200px;
+      width: 165px;
+      height: 230px;
       // box-shadow: 0 0 1px #d5c3c3;
-      margin-bottom: 12px;
+      margin-bottom: 4px;
+      margin-top: 12px;
     }
     .movie_list img {
       box-shadow: 0 0 1px #d5c3c3;
@@ -59,8 +61,8 @@
   }
 
   .movie_lists .movie_list .m_picture {
-    width: 150px;
-    height: 200px;
+    width: 165px;
+    height: 230px;
     object-fit: cover;
   }
 }
