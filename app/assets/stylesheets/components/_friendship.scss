@@ -1,11 +1,11 @@
 .friendship {
   background: black;
   margin-top: 9px;
-  height: calc(100vh - 75px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  height: calc(100vh - 110px);
 
   h1 {
     border-bottom: 1px solid $gray-200;
