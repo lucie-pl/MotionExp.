@@ -111,14 +111,18 @@ dune_old = Movie.create(title: "Dune", category: "Sci-Fi", year: 1984, synopsis:
 
 third_save_item = SaveItem.create(user: User.first, history: true, marked: false, title: the_amazing_spiderman.title, year: the_amazing_spiderman.title, api_movie_id: the_amazing_spiderman.id, poster: the_amazing_spiderman.poster)
 fourth_save_item = SaveItem.create(user: User.first, history: true, marked: false, title: spiderman.title, year: spiderman.year, api_movie_id: spiderman.id, poster: spiderman.poster)
+seventeenth_save_item = SaveItem.create(user: User.first, history: true, marked: false, title: dogtooth.title, year: dogtooth.year, api_movie_id: dogtooth.id, poster: dogtooth.poster, rating: 3)
+eigthteenth_save_item = SaveItem.create(user: User.first, history: true, marked: false, title: pulp_fiction.title, year: pulp_fiction.year, api_movie_id: pulp_fiction.id, poster: pulp_fiction.poster)
 sixth_save_item = SaveItem.create(user: User.first, history: true, marked: false, title: parasite.title, year: parasite.year, api_movie_id: parasite.id, poster: parasite.poster)
 seventh_save_item = SaveItem.create(user: User.first, history: true, marked: false, title: mad_max.title, year: mad_max.title, api_movie_id: mad_max.id, poster: mad_max.poster)
 twelth_save_item = SaveItem.create(user: User.first, history: true, marked: true, title: portrait_of_a_lady_on_fire.title, year: portrait_of_a_lady_on_fire.title, api_movie_id: portrait_of_a_lady_on_fire.id, poster: portrait_of_a_lady_on_fire.poster)
 tenth_save_item = SaveItem.create(user: User.first, history: true, marked: true, title: a_space_odyssey.title, year: a_space_odyssey.title, api_movie_id: a_space_odyssey.id, poster: a_space_odyssey.poster)
+
+
 eight_save_item = SaveItem.create(user: User.first, history: true, marked: false, title: dune.title, year: dune.year, api_movie_id: dune.id, poster: dune.poster)
 sixteenth_save_item = SaveItem.create(user: User.first, history: true, marked: false, title: spiderman_into_spiderverse.title, year: spiderman_into_spiderverse.year, api_movie_id: spiderman_into_spiderverse.id, poster: spiderman_into_spiderverse.poster)
 eleventh_save_item = SaveItem.create(user: User.first, history: true, marked: true, title: inception.title, year: inception.title, api_movie_id: inception.id, poster: inception.poster)
-eight_save_item = SaveItem.create(user: User.first, history: true, marked: false, title: the_lobster.title, year: the_lobster.year, api_movie_id: the_lobster.id, poster: the_lobster.poster)
+eight_save_item = SaveItem.create(user: User.first, history: false, marked: false, title: the_lobster.title, year: the_lobster.year, api_movie_id: the_lobster.id, poster: the_lobster.poster)
 
 thriteenth_save_item = SaveItem.create(user: User.first, history: false, marked: true, title: the_handmaiden.title, year: the_handmaiden.title, api_movie_id: the_handmaiden.id, poster: the_handmaiden.poster)
 seventh_save_item = SaveItem.create(user: User.first, history: false, marked: false, title: furiosa.title, year: furiosa.title, api_movie_id: furiosa.id, poster: furiosa.poster)
